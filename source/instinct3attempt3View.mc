@@ -4,12 +4,15 @@ import Toybox.System;
 import Toybox.Time;
 import Toybox.WatchUi;
 import Toybox.Weather;
+import Toybox.Position;
+
 
 
 
 const UPDATE_CYCLE_MINUTES = 10; // <- only update big screen once every UPDATE_CYCLE_MINUTES minutes
 const USING_45_MM_MODEL = true; // <- true: render for 45 mm model, false: render for 50 mm model.
 const SHOW_BATTERY_PCT_IMMEDIATELY_UPON_RETURN_TO_SCREEN = true; // <- other option is to have sub screen show the same minute as big screen
+const SUN_RETRY_SECONDS = 300;     // retry every 5 minutes until success
 
 // dimension coordinates of the 'submarine screen' of the solar 45 mm model.
 const _SUB_X_45 = 115;
@@ -33,8 +36,9 @@ var _SUB_H;
 // Debug flags
 const DEBUG_MODE                 = false; // master switch
 const DEBUG_SHOW_SECONDS_IN_HH_MM = true; // DEBUG: show seconds in both HH and MM slots, set to false to restore real time
-const DEBUG_INVERT_SUB_COLOR = true;
+const DEBUG_INVERT_SUB_COLOR = false;
 const DEBUG_INVERT_MAIN_COLOR = true;
+const DEBUG_SUN_TIMES = true;  // <- update sun cache every second
 
 // Helper: only true if global DEBUG_MODE is on *and* the specific flag is true
 function debug(flag) {
@@ -65,6 +69,14 @@ class instinct3attempt3View extends WatchUi.WatchFace {
     var _show_battery_now = false;
     var clk;
 
+    // --- Sun cache (updates once per day, or when forced) ---
+    var _sunCacheKey = null;           // String like "2025-12-12"
+    var _sunriseStrCached = "--:--";   // String
+    var _sunsetStrCached  = "--:--";   // String
+    var _forceSunUpdate   = true;      // Set true when you want to refresh ASAP
+    var _sunLastAttempt = 0;           // seconds
+
+
 
     function initialize() {
         WatchUi.WatchFace.initialize();
@@ -81,6 +93,9 @@ class instinct3attempt3View extends WatchUi.WatchFace {
             _SUB_W = _SUB_W_50;
             _SUB_H = _SUB_H_50;
         }
+
+        _forceSunUpdate   = true;
+        _sunLastAttempt = 0;
     }
 
     function onLayout(dc as Dc) {
@@ -99,12 +114,16 @@ class instinct3attempt3View extends WatchUi.WatchFace {
         _battPctY = _yTopRow + 10; // battery % y
         _extraMinutesDigitX = _battPctX ;
         _extraMinutesDigitY = _battPctY ;
-        _isInitialised = false;
-        _show_battery_now = true;
+        _sunLastAttempt = 0;
+        _force_redraw_entire_screen();
     }
 
     function onShow() {
         // We are visible again (returned from glances/notifications)
+        _force_redraw_entire_screen();
+    }
+
+    function _force_redraw_entire_screen() as Void{
         _isInitialised = false;
         _show_battery_now = SHOW_BATTERY_PCT_IMMEDIATELY_UPON_RETURN_TO_SCREEN;
     }
@@ -113,6 +132,8 @@ class instinct3attempt3View extends WatchUi.WatchFace {
 
     function onUpdate(dc as Dc) {
         clk = System.getClockTime();
+
+        if (debug(DEBUG_SUN_TIMES)){_forceSunUpdate   = true;} // <- force multiple sun updates during debugging
 
         if (!_isInitialised){ // <- handle returning from notifications or gestures
             _redrawEntireScreen(dc);
@@ -186,11 +207,13 @@ class instinct3attempt3View extends WatchUi.WatchFace {
         */
 
         // ---------- Sunrise / Sunset ----------
-        var sun = _getSunTimes();
+        _updateSunCacheIfNeeded();
+        // Sunset intentionally on LEFT, sunrise intentionally on RIGHT
+        // Avoid emoji if your device font renders it inconsistently.
         var sunLine = Lang.format("$1$ ☀️ $2$", [
-            sun[:sunset],
-            sun[:sunrise]
-        ]);
+            _sunsetStrCached,
+            _sunriseStrCached
+        ]); // <- TODO: remove wihtespace if necessary
 
         // ---------- Layout coordinates ----------
 
@@ -283,6 +306,7 @@ class instinct3attempt3View extends WatchUi.WatchFace {
         return Lang.format("$1$%", [ battPct.format("%d") ]);
     }
 
+    /*
     // Helper: get sunrise/sunset as "HH:MM", with safe fallbacks
     function _getSunTimes() {
         var result = {
@@ -327,4 +351,108 @@ class instinct3attempt3View extends WatchUi.WatchFace {
 
         return result;
     }
+    */
+
+    function _todayKey() as String {
+        var now = Time.now();
+        var gi  = Time.Gregorian.info(now, Time.FORMAT_SHORT);
+
+        // YYYY-MM-DD
+        return Lang.format("$1$-$2$-$3$", [
+            gi.year.format("%04d"),
+            gi.month.format("%02d"),
+            gi.day.format("%02d")
+        ]);
+    }
+
+    function _updateSunCacheIfNeeded() as Void {
+        var key = _todayKey();
+        var nowSec = Time.now().value();
+
+        var missing = (_sunriseStrCached == "--:--" || _sunsetStrCached == "--:--");
+        var retryDue = missing && ((nowSec - _sunLastAttempt >= SUN_RETRY_SECONDS)||(!_isInitialised)); // <- if missing, try every 5 minutes and every screen redrawing
+
+        if (_forceSunUpdate || _sunCacheKey == null || _sunCacheKey != key || retryDue ) {
+            _sunCacheKey = key;
+            _forceSunUpdate = false;
+            _sunLastAttempt = nowSec;
+
+            _computeSunTimesIntoCache();
+        }
+    }
+
+
+    function _computeSunTimesIntoCache() as Void {
+        var sunriseStr = "--:--";
+        var sunsetStr  = "--:--";
+
+        if (!(Toybox has :Weather)) {
+            _sunriseStrCached = sunriseStr;
+            _sunsetStrCached  = sunsetStr;
+            return;
+        }
+
+        var loc = null;
+
+        // 1) Weather observation location (best if present)
+        try {
+            var cond = Weather.getCurrentConditions();
+            if (cond != null) {
+                loc = cond.observationLocationPosition;
+            }
+        } catch (ex) { }
+
+        // 2) Fallback: last known device position
+        if (loc == null && (Toybox has :Position)) {
+            try {
+                var pinfo = Position.getInfo();
+                if (pinfo != null) {
+                    loc = pinfo.position;
+                }
+            } catch (ex2) { }
+        }
+
+        if (loc == null) {
+            // keep cached values; retry later (via throttle)
+            return;
+        }
+
+        // Anchor = today at noon
+        var now = Time.now();
+        var gi  = Time.Gregorian.info(now, Time.FORMAT_SHORT);
+
+        var anchor = Time.Gregorian.moment({
+            :year  => gi.year,
+            :month => gi.month,
+            :day   => gi.day,
+            :hour  => 12,
+            :min   => 0,
+            :sec   => 0
+        });
+
+        try {
+            var sr = Weather.getSunrise(loc, anchor);
+            var ss = Weather.getSunset(loc, anchor);
+
+            if (sr != null) {
+                var gsr = Time.Gregorian.info(sr, Time.FORMAT_SHORT);
+                sunriseStr = Lang.format("$1$:$2$", [
+                    gsr.hour.format("%02d"),
+                    gsr.min.format("%02d")
+                ]);
+            }
+
+            if (ss != null) {
+                var gss = Time.Gregorian.info(ss, Time.FORMAT_SHORT);
+                sunsetStr = Lang.format("$1$:$2$", [
+                    gss.hour.format("%02d"),
+                    gss.min.format("%02d")
+                ]);
+            }
+        } catch (ex3) { }
+
+        _sunriseStrCached = sunriseStr;
+        _sunsetStrCached  = sunsetStr;
+    }
+
 }
