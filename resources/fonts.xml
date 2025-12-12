@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <fonts>
+        <!-- Only digits and ':' are needed for time -->
+        <font
+            id="BigTime"
+            filename="fonts/bigtime.fnt"
+            antialias="true"
+            filter="0123456789:" />
+    </fonts>
+</resources>

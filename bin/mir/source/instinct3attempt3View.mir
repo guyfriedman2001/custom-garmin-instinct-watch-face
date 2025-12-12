@@ -1,0 +1,822 @@
+[ @file = "/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc"; @line = 1; @symbol_importdef<0> = [Toybox,1,7,13]; @symbol_importdef<1> = [Graphics,1,14,22]; ]
+import Toybox.Graphics;
+[ @file = "/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc"; @line = 2; @symbol_importdef<0> = [Toybox,2,7,13]; @symbol_importdef<1> = [Lang,2,14,18]; ]
+import Toybox.Lang;
+[ @file = "/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc"; @line = 3; @symbol_importdef<0> = [Toybox,3,7,13]; @symbol_importdef<1> = [System,3,14,20]; ]
+import Toybox.System;
+[ @file = "/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc"; @line = 4; @symbol_importdef<0> = [Toybox,4,7,13]; @symbol_importdef<1> = [Time,4,14,18]; ]
+import Toybox.Time;
+[ @file = "/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc"; @line = 5; @symbol_importdef<0> = [Toybox,5,7,13]; @symbol_importdef<1> = [WatchUi,5,14,21]; ]
+import Toybox.WatchUi;
+[ @file = "/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc"; @line = 6; @symbol_importdef<0> = [Toybox,6,7,13]; @symbol_importdef<1> = [Weather,6,14,21]; ]
+import Toybox.Weather;
+[ @file = "/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc"; @line = 8; @symbol_classdef = [instinct3attempt3View,8,6,27]; @symbol_extends<0> = [WatchUi,8,36,43]; @symbol_extends<1> = [WatchFace,8,44,53]; ]
+class instinct3attempt3View extends WatchUi.WatchFace {
+    [ @file = "/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc"; @line = 8; ]
+    <init> {
+    }
+    [ @file = "/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc"; @line = 8; ]
+    static
+    <init> {
+    }
+    [ @file = "/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc"; @line = 10; @position = 8; @symbol_vardef = [_bigTimeFont,10,8,20]; ]
+    var _bigTimeFont;
+    [ @file = "/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc"; @line = 12; @symbol_functiondef = [initialize,12,13,23]; ]
+    function initialize() as Void {
+_Users_guyfriedman_Documents_GuysUtil_MonkeyC_instinct3attempt3_source_instinct3attempt3View_mc_12_26_15_4_start:
+[ "/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" 13 8 ]
+        symbol [ WatchUi %tmp.1 13 8 15 ];
+        %tmp.1 = getm $.Toybox.WatchUi;
+        symbol [ WatchFace %tmp.2 13 16 25 ];
+        %tmp.2 = getv %tmp.1 :WatchFace;
+        symbol [ initialize %tmp.3 13 26 36 ];
+        %tmp.3 = getv function %tmp.2 :initialize;
+        invoke %tmp.2 %tmp.3();
+[ "/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" 14 8 ]
+        symbol [ WatchUi %tmp.4 14 23 30 ];
+        %tmp.4 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.5 14 31 43 ];
+        %tmp.5 = getv function %tmp.4 :loadResource;
+        symbol [ Rez %tmp.7 14 44 47 ];
+        %tmp.7 = getv ? :Rez;
+        symbol [ Fonts %tmp.8 14 48 53 ];
+        %tmp.8 = getv %tmp.7 :Fonts;
+        symbol [ BigTime %tmp.9 14 54 61 ];
+        %tmp.9 = getv %tmp.8 :BigTime;
+        %tmp.10 = invoke %tmp.4 %tmp.5(%tmp.9);
+        symbol [ _bigTimeFont ? 14 8 20 ];
+        putv self :_bigTimeFont %tmp.10;
+_Users_guyfriedman_Documents_GuysUtil_MonkeyC_instinct3attempt3_source_instinct3attempt3View_mc_12_26_15_4_stop:
+    }
+    [ @file = "/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc"; @line = 17; @symbol_functiondef = [onLayout,17,13,21]; @symbol_param<0> = [dc,17,22,24]; @symbol_param<0>_type<0> = [Dc,17,28,30]; ]
+    function onLayout(dc as Dc) {
+    }
+    [ @file = "/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc"; @line = 21; @symbol_functiondef = [onUpdate,21,13,21]; @symbol_param<0> = [dc,21,22,24]; @symbol_param<0>_type<0> = [Dc,21,28,30]; ]
+    function onUpdate(dc as Dc) {
+_Users_guyfriedman_Documents_GuysUtil_MonkeyC_instinct3attempt3_source_instinct3attempt3View_mc_21_32_139_4_start:
+[ "/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" 23 8 ]
+        %tmp.1 = lgetv %dc;
+        symbol [ dc %tmp.1 23 8 10 ];
+        symbol [ setColor %tmp.2 23 11 19 ];
+        %tmp.2 = getv function %tmp.1 :setColor;
+        symbol [ Graphics %tmp.3 23 20 28 ];
+        %tmp.3 = getm $.Toybox.Graphics;
+        symbol [ COLOR_WHITE %tmp.4 23 29 40 ];
+        %tmp.4 = getv %tmp.3 :COLOR_WHITE;
+        symbol [ Graphics %tmp.5 23 42 50 ];
+        %tmp.5 = getm $.Toybox.Graphics;
+        symbol [ COLOR_BLACK %tmp.6 23 51 62 ];
+        %tmp.6 = getv %tmp.5 :COLOR_BLACK;
+        invoke %tmp.1 %tmp.2(%tmp.4, %tmp.6);
+[ "/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" 24 8 ]
+        %tmp.7 = lgetv %dc;
+        symbol [ dc %tmp.7 24 8 10 ];
+        symbol [ clear %tmp.8 24 11 16 ];
+        %tmp.8 = getv function %tmp.7 :clear;
+        invoke %tmp.7 %tmp.8();
+[ "/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" 26 8 ]
+        [ "_Users_guyfriedman_Documents_GuysUtil_MonkeyC_instinct3attempt3_source_instinct3attempt3View_mc_21_32_139_4_start" "_Users_guyfriedman_Documents_GuysUtil_MonkeyC_instinct3attempt3_source_instinct3attempt3View_mc_21_32_139_4_stop" ]
+        %w.1 = local;
+        symbol [ w %w.1 26 12 13 ];
+        %tmp.9 = lgetv %dc;
+        symbol [ dc %tmp.9 26 16 18 ];
+        symbol [ getWidth %tmp.10 26 19 27 ];
+        %tmp.10 = getv function %tmp.9 :getWidth;
+        %tmp.11 = invoke %tmp.9 %tmp.10();
+        lputv %w.1 %tmp.11;
+        symbol [ w %w.1 26 12 13 ];
+[ "/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" 27 8 ]
+        [ "_Users_guyfriedman_Documents_GuysUtil_MonkeyC_instinct3attempt3_source_instinct3attempt3View_mc_21_32_139_4_start" "_Users_guyfriedman_Documents_GuysUtil_MonkeyC_instinct3attempt3_source_instinct3attempt3View_mc_21_32_139_4_stop" ]
+        %h.2 = local;
+        symbol [ h %h.2 27 12 13 ];
+        %tmp.12 = lgetv %dc;
+        symbol [ dc %tmp.12 27 16 18 ];
+        symbol [ getHeight %tmp.13 27 19 28 ];
+        %tmp.13 = getv function %tmp.12 :getHeight;
+        %tmp.14 = invoke %tmp.12 %tmp.13();
+        lputv %h.2 %tmp.14;
+        symbol [ h %h.2 27 12 13 ];
+[ "/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" 30 8 ]
+        [ "_Users_guyfriedman_Documents_GuysUtil_MonkeyC_instinct3attempt3_source_instinct3attempt3View_mc_21_32_139_4_start" "_Users_guyfriedman_Documents_GuysUtil_MonkeyC_instinct3attempt3_source_instinct3attempt3View_mc_21_32_139_4_stop" ]
+        %clk.3 = local;
+        symbol [ clk %clk.3 30 12 15 ];
+        symbol [ System %tmp.15 30 18 24 ];
+        %tmp.15 = getm $.Toybox.System;
+        symbol [ getClockTime %tmp.16 30 25 37 ];
+        %tmp.16 = getv function %tmp.15 :getClockTime;
+        %tmp.17 = invoke %tmp.15 %tmp.16();
+        lputv %clk.3 %tmp.17;
+        symbol [ clk %clk.3 30 12 15 ];
+[ "/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" 31 8 ]
+        [ "_Users_guyfriedman_Documents_GuysUtil_MonkeyC_instinct3attempt3_source_instinct3attempt3View_mc_21_32_139_4_start" "_Users_guyfriedman_Documents_GuysUtil_MonkeyC_instinct3attempt3_source_instinct3attempt3View_mc_21_32_139_4_stop" ]
+        %timeStr.4 = local;
+        symbol [ timeStr %timeStr.4 31 12 19 ];
+        symbol [ Lang %tmp.18 31 22 26 ];
+        %tmp.18 = getm $.Toybox.Lang;
+        symbol [ format %tmp.19 31 27 33 ];
+        %tmp.19 = getv function %tmp.18 :format;
+        %tmp.20 = "$1$:$2$";
+        %tmp.21 = newa 2;
+        %tmp.22 = lgetv %clk.3;
+        symbol [ clk %tmp.22 32 12 15 ];
+        symbol [ hour %tmp.23 32 16 20 ];
+        %tmp.23 = getv %tmp.22 :hour;
+        symbol [ format %tmp.24 32 21 27 ];
+        %tmp.24 = getv function %tmp.23 :format;
+        %tmp.25 = "%02d";
+        %tmp.26 = invoke %tmp.23 %tmp.24(%tmp.25);
+        %tmp.27 = dup %tmp.21;
+        %tmp.28 = aputv %tmp.27 0 %tmp.26;
+        %tmp.29 = lgetv %clk.3;
+        symbol [ clk %tmp.29 33 12 15 ];
+        symbol [ min %tmp.30 33 16 19 ];
+        %tmp.30 = getv %tmp.29 :min;
+        symbol [ format %tmp.31 33 20 26 ];
+        %tmp.31 = getv function %tmp.30 :format;
+        %tmp.32 = "%02d";
+        %tmp.33 = invoke %tmp.30 %tmp.31(%tmp.32);
+        %tmp.34 = dup %tmp.28;
+        %tmp.35 = aputv %tmp.34 1 %tmp.33;
+        %tmp.36 = invoke %tmp.18 %tmp.19(%tmp.20, %tmp.35);
+        lputv %timeStr.4 %tmp.36;
+        symbol [ timeStr %timeStr.4 31 12 19 ];
+[ "/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" 43 8 ]
+        [ "_Users_guyfriedman_Documents_GuysUtil_MonkeyC_instinct3attempt3_source_instinct3attempt3View_mc_21_32_139_4_start" "_Users_guyfriedman_Documents_GuysUtil_MonkeyC_instinct3attempt3_source_instinct3attempt3View_mc_21_32_139_4_stop" ]
+        %timeFont.5 = local;
+        symbol [ timeFont %timeFont.5 43 12 20 ];
+        symbol [ Rez %tmp.38 43 23 26 ];
+        %tmp.38 = getv ? :Rez;
+        symbol [ Fonts %tmp.39 43 27 32 ];
+        %tmp.39 = getv %tmp.38 :Fonts;
+        symbol [ BigTime %tmp.40 43 33 40 ];
+        %tmp.40 = getv %tmp.39 :BigTime;
+        lputv %timeFont.5 %tmp.40;
+        symbol [ timeFont %timeFont.5 43 12 20 ];
+[ "/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" 47 8 ]
+        [ "_Users_guyfriedman_Documents_GuysUtil_MonkeyC_instinct3attempt3_source_instinct3attempt3View_mc_21_32_139_4_start" "_Users_guyfriedman_Documents_GuysUtil_MonkeyC_instinct3attempt3_source_instinct3attempt3View_mc_21_32_139_4_stop" ]
+        %now.6 = local;
+        symbol [ now %now.6 47 12 15 ];
+        symbol [ Time %tmp.41 47 19 23 ];
+        %tmp.41 = getm $.Toybox.Time;
+        symbol [ now %tmp.42 47 24 27 ];
+        %tmp.42 = getv function %tmp.41 :now;
+        %tmp.43 = invoke %tmp.41 %tmp.42();
+        lputv %now.6 %tmp.43;
+        symbol [ now %now.6 47 12 15 ];
+[ "/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" 48 8 ]
+        [ "_Users_guyfriedman_Documents_GuysUtil_MonkeyC_instinct3attempt3_source_instinct3attempt3View_mc_21_32_139_4_start" "_Users_guyfriedman_Documents_GuysUtil_MonkeyC_instinct3attempt3_source_instinct3attempt3View_mc_21_32_139_4_stop" ]
+        %info.7 = local;
+        symbol [ info %info.7 48 12 16 ];
+        symbol [ Time %tmp.44 48 19 23 ];
+        %tmp.44 = getm $.Toybox.Time;
+        symbol [ Gregorian %tmp.45 48 24 33 ];
+        %tmp.45 = getv %tmp.44 :Gregorian;
+        symbol [ info %tmp.46 48 34 38 ];
+        %tmp.46 = getv function %tmp.45 :info;
+        %tmp.47 = lgetv %now.6;
+        symbol [ now %tmp.47 48 39 42 ];
+        symbol [ Time %tmp.48 48 44 48 ];
+        %tmp.48 = getm $.Toybox.Time;
+        symbol [ FORMAT_SHORT %tmp.49 48 49 61 ];
+        %tmp.49 = getv %tmp.48 :FORMAT_SHORT;
+        %tmp.50 = invoke %tmp.45 %tmp.46(%tmp.47, %tmp.49);
+        lputv %info.7 %tmp.50;
+        symbol [ info %info.7 48 12 16 ];
+[ "/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" 51 8 ]
+        [ "_Users_guyfriedman_Documents_GuysUtil_MonkeyC_instinct3attempt3_source_instinct3attempt3View_mc_21_32_139_4_start" "_Users_guyfriedman_Documents_GuysUtil_MonkeyC_instinct3attempt3_source_instinct3attempt3View_mc_21_32_139_4_stop" ]
+        %dowNames.8 = local;
+        symbol [ dowNames %dowNames.8 51 12 20 ];
+        %tmp.51 = newa 7;
+        %tmp.52 = "ראשון";
+        %tmp.53 = dup %tmp.51;
+        %tmp.54 = aputv %tmp.53 0 %tmp.52;
+        %tmp.55 = "שני";
+        %tmp.56 = dup %tmp.54;
+        %tmp.57 = aputv %tmp.56 1 %tmp.55;
+        %tmp.58 = "שלישי";
+        %tmp.59 = dup %tmp.57;
+        %tmp.60 = aputv %tmp.59 2 %tmp.58;
+        %tmp.61 = "רביעי";
+        %tmp.62 = dup %tmp.60;
+        %tmp.63 = aputv %tmp.62 3 %tmp.61;
+        %tmp.64 = "חמישי";
+        %tmp.65 = dup %tmp.63;
+        %tmp.66 = aputv %tmp.65 4 %tmp.64;
+        %tmp.67 = "שישי";
+        %tmp.68 = dup %tmp.66;
+        %tmp.69 = aputv %tmp.68 5 %tmp.67;
+        %tmp.70 = "שבת";
+        %tmp.71 = dup %tmp.69;
+        %tmp.72 = aputv %tmp.71 6 %tmp.70;
+        lputv %dowNames.8 %tmp.72;
+        symbol [ dowNames %dowNames.8 51 12 20 ];
+[ "/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" 52 8 ]
+        [ "_Users_guyfriedman_Documents_GuysUtil_MonkeyC_instinct3attempt3_source_instinct3attempt3View_mc_21_32_139_4_start" "_Users_guyfriedman_Documents_GuysUtil_MonkeyC_instinct3attempt3_source_instinct3attempt3View_mc_21_32_139_4_stop" ]
+        %dow.9 = local;
+        symbol [ dow %dow.9 52 12 15 ];
+        %tmp.73 = lgetv %dowNames.8;
+        symbol [ dowNames %tmp.73 52 23 31 ];
+        %tmp.74 = lgetv %info.7;
+        symbol [ info %tmp.74 52 32 36 ];
+        symbol [ day_of_week %tmp.75 52 37 48 ];
+        %tmp.75 = getv %tmp.74 :day_of_week;
+        %tmp.76 = 1;
+        %tmp.77 = sub %tmp.75 %tmp.76;
+        %tmp.78 = agetv %tmp.73 %tmp.77;
+        lputv %dow.9 %tmp.78;
+        symbol [ dow %dow.9 52 12 15 ];
+[ "/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" 54 8 ]
+        [ "_Users_guyfriedman_Documents_GuysUtil_MonkeyC_instinct3attempt3_source_instinct3attempt3View_mc_21_32_139_4_start" "_Users_guyfriedman_Documents_GuysUtil_MonkeyC_instinct3attempt3_source_instinct3attempt3View_mc_21_32_139_4_stop" ]
+        %dayStr.10 = local;
+        symbol [ dayStr %dayStr.10 54 12 18 ];
+        %tmp.79 = lgetv %info.7;
+        symbol [ info %tmp.79 54 23 27 ];
+        symbol [ day %tmp.80 54 28 31 ];
+        %tmp.80 = getv %tmp.79 :day;
+        symbol [ format %tmp.81 54 32 38 ];
+        %tmp.81 = getv function %tmp.80 :format;
+        %tmp.82 = "%02d";
+        %tmp.83 = invoke %tmp.80 %tmp.81(%tmp.82);
+        lputv %dayStr.10 %tmp.83;
+        symbol [ dayStr %dayStr.10 54 12 18 ];
+[ "/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" 55 8 ]
+        [ "_Users_guyfriedman_Documents_GuysUtil_MonkeyC_instinct3attempt3_source_instinct3attempt3View_mc_21_32_139_4_start" "_Users_guyfriedman_Documents_GuysUtil_MonkeyC_instinct3attempt3_source_instinct3attempt3View_mc_21_32_139_4_stop" ]
+        %monthStr.11 = local;
+        symbol [ monthStr %monthStr.11 55 12 20 ];
+        %tmp.84 = lgetv %info.7;
+        symbol [ info %tmp.84 55 23 27 ];
+        symbol [ month %tmp.85 55 28 33 ];
+        %tmp.85 = getv %tmp.84 :month;
+        symbol [ format %tmp.86 55 34 40 ];
+        %tmp.86 = getv function %tmp.85 :format;
+        %tmp.87 = "%02d";
+        %tmp.88 = invoke %tmp.85 %tmp.86(%tmp.87);
+        lputv %monthStr.11 %tmp.88;
+        symbol [ monthStr %monthStr.11 55 12 20 ];
+[ "/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" 56 8 ]
+        [ "_Users_guyfriedman_Documents_GuysUtil_MonkeyC_instinct3attempt3_source_instinct3attempt3View_mc_21_32_139_4_start" "_Users_guyfriedman_Documents_GuysUtil_MonkeyC_instinct3attempt3_source_instinct3attempt3View_mc_21_32_139_4_stop" ]
+        %yearStr.12 = local;
+        symbol [ yearStr %yearStr.12 56 12 19 ];
+        %tmp.89 = lgetv %info.7;
+        symbol [ info %tmp.89 56 23 27 ];
+        symbol [ year %tmp.90 56 28 32 ];
+        %tmp.90 = getv %tmp.89 :year;
+        symbol [ format %tmp.91 56 33 39 ];
+        %tmp.91 = getv function %tmp.90 :format;
+        %tmp.92 = "%02d";
+        %tmp.93 = invoke %tmp.90 %tmp.91(%tmp.92);
+        lputv %yearStr.12 %tmp.93;
+        symbol [ yearStr %yearStr.12 56 12 19 ];
+[ "/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" 58 8 ]
+        [ "_Users_guyfriedman_Documents_GuysUtil_MonkeyC_instinct3attempt3_source_instinct3attempt3View_mc_21_32_139_4_start" "_Users_guyfriedman_Documents_GuysUtil_MonkeyC_instinct3attempt3_source_instinct3attempt3View_mc_21_32_139_4_stop" ]
+        %dateStr.13 = local;
+        symbol [ dateStr %dateStr.13 58 12 19 ];
+        symbol [ Lang %tmp.94 58 22 26 ];
+        %tmp.94 = getm $.Toybox.Lang;
+        symbol [ format %tmp.95 58 27 33 ];
+        %tmp.95 = getv function %tmp.94 :format;
+        %tmp.96 = "$1$/$2$/$3$";
+        %tmp.97 = newa 3;
+        %tmp.98 = lgetv %dayStr.10;
+        symbol [ dayStr %tmp.98 59 12 18 ];
+        %tmp.99 = dup %tmp.97;
+        %tmp.100 = aputv %tmp.99 0 %tmp.98;
+        %tmp.101 = lgetv %monthStr.11;
+        symbol [ monthStr %tmp.101 60 12 20 ];
+        %tmp.102 = dup %tmp.100;
+        %tmp.103 = aputv %tmp.102 1 %tmp.101;
+        %tmp.104 = lgetv %yearStr.12;
+        symbol [ yearStr %tmp.104 61 12 19 ];
+        %tmp.105 = dup %tmp.103;
+        %tmp.106 = aputv %tmp.105 2 %tmp.104;
+        %tmp.107 = invoke %tmp.94 %tmp.95(%tmp.96, %tmp.106);
+        lputv %dateStr.13 %tmp.107;
+        symbol [ dateStr %dateStr.13 58 12 19 ];
+[ "/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" 65 8 ]
+        [ "_Users_guyfriedman_Documents_GuysUtil_MonkeyC_instinct3attempt3_source_instinct3attempt3View_mc_21_32_139_4_start" "_Users_guyfriedman_Documents_GuysUtil_MonkeyC_instinct3attempt3_source_instinct3attempt3View_mc_21_32_139_4_stop" ]
+        %stats.14 = local;
+        symbol [ stats %stats.14 65 12 17 ];
+        symbol [ System %tmp.108 65 25 31 ];
+        %tmp.108 = getm $.Toybox.System;
+        symbol [ getSystemStats %tmp.109 65 32 46 ];
+        %tmp.109 = getv function %tmp.108 :getSystemStats;
+        %tmp.110 = invoke %tmp.108 %tmp.109();
+        lputv %stats.14 %tmp.110;
+        symbol [ stats %stats.14 65 12 17 ];
+[ "/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" 66 8 ]
+        [ "_Users_guyfriedman_Documents_GuysUtil_MonkeyC_instinct3attempt3_source_instinct3attempt3View_mc_21_32_139_4_start" "_Users_guyfriedman_Documents_GuysUtil_MonkeyC_instinct3attempt3_source_instinct3attempt3View_mc_21_32_139_4_stop" ]
+        %battPct.15 = local;
+        symbol [ battPct %battPct.15 66 12 19 ];
+        %tmp.111 = lgetv %stats.14;
+        symbol [ stats %tmp.111 66 25 30 ];
+        symbol [ battery %tmp.112 66 31 38 ];
+        %tmp.112 = getv %tmp.111 :battery;
+        lputv %battPct.15 %tmp.112;
+        symbol [ battPct %battPct.15 66 12 19 ];
+[ "/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" 67 8 ]
+        [ "_Users_guyfriedman_Documents_GuysUtil_MonkeyC_instinct3attempt3_source_instinct3attempt3View_mc_21_32_139_4_start" "_Users_guyfriedman_Documents_GuysUtil_MonkeyC_instinct3attempt3_source_instinct3attempt3View_mc_21_32_139_4_stop" ]
+        %battPctStr.16 = local;
+        symbol [ battPctStr %battPctStr.16 67 12 22 ];
+        symbol [ Lang %tmp.113 67 25 29 ];
+        %tmp.113 = getm $.Toybox.Lang;
+        symbol [ format %tmp.114 67 30 36 ];
+        %tmp.114 = getv function %tmp.113 :format;
+        %tmp.115 = "$1$%";
+        %tmp.116 = newa 1;
+        %tmp.117 = lgetv %battPct.15;
+        symbol [ battPct %tmp.117 67 47 54 ];
+        symbol [ format %tmp.118 67 55 61 ];
+        %tmp.118 = getv function %tmp.117 :format;
+        %tmp.119 = "%d";
+        %tmp.120 = invoke %tmp.117 %tmp.118(%tmp.119);
+        %tmp.121 = dup %tmp.116;
+        %tmp.122 = aputv %tmp.121 0 %tmp.120;
+        %tmp.123 = invoke %tmp.113 %tmp.114(%tmp.115, %tmp.122);
+        lputv %battPctStr.16 %tmp.123;
+        symbol [ battPctStr %battPctStr.16 67 12 22 ];
+[ "/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" 70 8 ]
+        [ "_Users_guyfriedman_Documents_GuysUtil_MonkeyC_instinct3attempt3_source_instinct3attempt3View_mc_21_32_139_4_start" "_Users_guyfriedman_Documents_GuysUtil_MonkeyC_instinct3attempt3_source_instinct3attempt3View_mc_21_32_139_4_stop" ]
+        %sun.17 = local;
+        symbol [ sun %sun.17 70 12 15 ];
+        %tmp.124 = self;
+        symbol [ _getSunTimes %tmp.125 70 18 30 ];
+        %tmp.125 = getv function %tmp.124 :_getSunTimes;
+        %tmp.126 = invoke %tmp.124 %tmp.125();
+        lputv %sun.17 %tmp.126;
+        symbol [ sun %sun.17 70 12 15 ];
+[ "/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" 71 8 ]
+        [ "_Users_guyfriedman_Documents_GuysUtil_MonkeyC_instinct3attempt3_source_instinct3attempt3View_mc_21_32_139_4_start" "_Users_guyfriedman_Documents_GuysUtil_MonkeyC_instinct3attempt3_source_instinct3attempt3View_mc_21_32_139_4_stop" ]
+        %sunLine.18 = local;
+        symbol [ sunLine %sunLine.18 71 12 19 ];
+        symbol [ Lang %tmp.127 71 22 26 ];
+        %tmp.127 = getm $.Toybox.Lang;
+        symbol [ format %tmp.128 71 27 33 ];
+        %tmp.128 = getv function %tmp.127 :format;
+        %tmp.129 = "$1$ ◊ $2$";
+        %tmp.130 = newa 2;
+        %tmp.131 = lgetv %sun.17;
+        symbol [ sun %tmp.131 72 12 15 ];
+        %tmp.133 = const :sunrise;
+        symbol [ sunrise %tmp.133 72 17 24 const ];
+        %tmp.134 = agetv %tmp.131 %tmp.133;
+        %tmp.135 = dup %tmp.130;
+        %tmp.136 = aputv %tmp.135 0 %tmp.134;
+        %tmp.137 = lgetv %sun.17;
+        symbol [ sun %tmp.137 73 12 15 ];
+        %tmp.139 = const :sunset;
+        symbol [ sunset %tmp.139 73 17 23 const ];
+        %tmp.140 = agetv %tmp.137 %tmp.139;
+        %tmp.141 = dup %tmp.136;
+        %tmp.142 = aputv %tmp.141 1 %tmp.140;
+        %tmp.143 = invoke %tmp.127 %tmp.128(%tmp.129, %tmp.142);
+        lputv %sunLine.18 %tmp.143;
+        symbol [ sunLine %sunLine.18 71 12 19 ];
+[ "/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" 78 8 ]
+        [ "_Users_guyfriedman_Documents_GuysUtil_MonkeyC_instinct3attempt3_source_instinct3attempt3View_mc_21_32_139_4_start" "_Users_guyfriedman_Documents_GuysUtil_MonkeyC_instinct3attempt3_source_instinct3attempt3View_mc_21_32_139_4_stop" ]
+        %yTopRow.19 = local;
+        symbol [ yTopRow %yTopRow.19 78 12 19 ];
+        %tmp.144 = 10;
+        lputv %yTopRow.19 %tmp.144;
+        symbol [ yTopRow %yTopRow.19 78 12 19 ];
+[ "/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" 79 8 ]
+        [ "_Users_guyfriedman_Documents_GuysUtil_MonkeyC_instinct3attempt3_source_instinct3attempt3View_mc_21_32_139_4_start" "_Users_guyfriedman_Documents_GuysUtil_MonkeyC_instinct3attempt3_source_instinct3attempt3View_mc_21_32_139_4_stop" ]
+        %yDateRow.20 = local;
+        symbol [ yDateRow %yDateRow.20 79 12 20 ];
+        %tmp.145 = 26;
+        lputv %yDateRow.20 %tmp.145;
+        symbol [ yDateRow %yDateRow.20 79 12 20 ];
+[ "/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" 80 8 ]
+        [ "_Users_guyfriedman_Documents_GuysUtil_MonkeyC_instinct3attempt3_source_instinct3attempt3View_mc_21_32_139_4_start" "_Users_guyfriedman_Documents_GuysUtil_MonkeyC_instinct3attempt3_source_instinct3attempt3View_mc_21_32_139_4_stop" ]
+        %yTime.21 = local;
+        symbol [ yTime %yTime.21 80 12 17 ];
+        %tmp.146 = lgetv %h.2;
+        symbol [ h %tmp.146 80 23 24 ];
+        %tmp.147 = 2;
+        %tmp.148 = div %tmp.146 %tmp.147;
+        lputv %yTime.21 %tmp.148;
+        symbol [ yTime %yTime.21 80 12 17 ];
+[ "/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" 81 8 ]
+        [ "_Users_guyfriedman_Documents_GuysUtil_MonkeyC_instinct3attempt3_source_instinct3attempt3View_mc_21_32_139_4_start" "_Users_guyfriedman_Documents_GuysUtil_MonkeyC_instinct3attempt3_source_instinct3attempt3View_mc_21_32_139_4_stop" ]
+        %ySunRow.22 = local;
+        symbol [ ySunRow %ySunRow.22 81 12 19 ];
+        %tmp.149 = lgetv %h.2;
+        symbol [ h %tmp.149 81 23 24 ];
+        %tmp.150 = 26;
+        %tmp.151 = sub %tmp.149 %tmp.150;
+        lputv %ySunRow.22 %tmp.151;
+        symbol [ ySunRow %ySunRow.22 81 12 19 ];
+[ "/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" 84 8 ]
+        %tmp.152 = lgetv %dc;
+        symbol [ dc %tmp.152 84 8 10 ];
+        symbol [ drawText %tmp.153 84 11 19 ];
+        %tmp.153 = getv function %tmp.152 :drawText;
+        %tmp.154 = 65;
+        %tmp.155 = 5;
+        symbol [ Graphics %tmp.156 87 12 20 ];
+        %tmp.156 = getm $.Toybox.Graphics;
+        symbol [ FONT_LARGE %tmp.157 87 21 31 ];
+        %tmp.157 = getv %tmp.156 :FONT_LARGE;
+        %tmp.158 = lgetv %dow.9;
+        symbol [ dow %tmp.158 88 12 15 ];
+        symbol [ Graphics %tmp.159 89 12 20 ];
+        %tmp.159 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.160 89 21 40 ];
+        %tmp.160 = getv %tmp.159 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.152 %tmp.153(%tmp.154, %tmp.155, %tmp.157, %tmp.158, %tmp.160);
+[ "/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" 104 8 ]
+        %tmp.161 = lgetv %dc;
+        symbol [ dc %tmp.161 104 8 10 ];
+        symbol [ drawText %tmp.162 104 11 19 ];
+        %tmp.162 = getv function %tmp.161 :drawText;
+        %tmp.163 = lgetv %w.1;
+        symbol [ w %tmp.163 105 12 13 ];
+        %tmp.164 = 30;
+        %tmp.165 = sub %tmp.163 %tmp.164;
+        %tmp.166 = lgetv %yTopRow.19;
+        symbol [ yTopRow %tmp.166 106 12 19 ];
+        %tmp.167 = 10;
+        %tmp.168 = add %tmp.166 %tmp.167;
+        symbol [ Graphics %tmp.169 107 12 20 ];
+        %tmp.169 = getm $.Toybox.Graphics;
+        symbol [ FONT_SMALL %tmp.170 107 21 31 ];
+        %tmp.170 = getv %tmp.169 :FONT_SMALL;
+        %tmp.171 = lgetv %battPctStr.16;
+        symbol [ battPctStr %tmp.171 108 12 22 ];
+        symbol [ Graphics %tmp.172 109 12 20 ];
+        %tmp.172 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.173 109 21 40 ];
+        %tmp.173 = getv %tmp.172 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.161 %tmp.162(%tmp.165, %tmp.168, %tmp.170, %tmp.171, %tmp.173);
+[ "/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" 113 8 ]
+        [ "_Users_guyfriedman_Documents_GuysUtil_MonkeyC_instinct3attempt3_source_instinct3attempt3View_mc_21_32_139_4_start" "_Users_guyfriedman_Documents_GuysUtil_MonkeyC_instinct3attempt3_source_instinct3attempt3View_mc_21_32_139_4_stop" ]
+        %dateX.23 = local;
+        symbol [ dateX %dateX.23 113 12 17 ];
+        %tmp.174 = lgetv %w.1;
+        symbol [ w %tmp.174 113 21 22 ];
+        %tmp.175 = 2;
+        %tmp.176 = div %tmp.174 %tmp.175;
+        %tmp.177 = 80;
+        %tmp.178 = sub %tmp.176 %tmp.177;
+        lputv %dateX.23 %tmp.178;
+        symbol [ dateX %dateX.23 113 12 17 ];
+[ "/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" 114 8 ]
+        %tmp.179 = lgetv %dc;
+        symbol [ dc %tmp.179 114 8 10 ];
+        symbol [ drawText %tmp.180 114 11 19 ];
+        %tmp.180 = getv function %tmp.179 :drawText;
+        %tmp.181 = lgetv %dateX.23;
+        symbol [ dateX %tmp.181 115 12 17 ];
+        %tmp.182 = lgetv %yDateRow.20;
+        symbol [ yDateRow %tmp.182 116 12 20 ];
+        %tmp.183 = 15;
+        %tmp.184 = add %tmp.182 %tmp.183;
+        symbol [ Graphics %tmp.185 117 12 20 ];
+        %tmp.185 = getm $.Toybox.Graphics;
+        symbol [ FONT_SMALL %tmp.186 117 21 31 ];
+        %tmp.186 = getv %tmp.185 :FONT_SMALL;
+        %tmp.187 = lgetv %dateStr.13;
+        symbol [ dateStr %tmp.187 118 12 19 ];
+        symbol [ Graphics %tmp.188 119 12 20 ];
+        %tmp.188 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_LEFT %tmp.189 119 21 38 ];
+        %tmp.189 = getv %tmp.188 :TEXT_JUSTIFY_LEFT;
+        invoke %tmp.179 %tmp.180(%tmp.181, %tmp.184, %tmp.186, %tmp.187, %tmp.189);
+[ "/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" 123 8 ]
+        %tmp.190 = lgetv %dc;
+        symbol [ dc %tmp.190 123 8 10 ];
+        symbol [ drawText %tmp.191 123 11 19 ];
+        %tmp.191 = getv function %tmp.190 :drawText;
+        %tmp.192 = lgetv %w.1;
+        symbol [ w %tmp.192 124 12 13 ];
+        %tmp.193 = 2;
+        %tmp.194 = div %tmp.192 %tmp.193;
+        %tmp.195 = lgetv %yTime.21;
+        symbol [ yTime %tmp.195 125 12 17 ];
+        %tmp.196 = 15;
+        %tmp.197 = add %tmp.195 %tmp.196;
+        symbol [ _bigTimeFont %tmp.199 126 12 24 ];
+        %tmp.199 = getv ? :_bigTimeFont;
+        %tmp.200 = lgetv %timeStr.4;
+        symbol [ timeStr %tmp.200 127 12 19 ];
+        symbol [ Graphics %tmp.201 128 12 20 ];
+        %tmp.201 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.202 128 21 40 ];
+        %tmp.202 = getv %tmp.201 :TEXT_JUSTIFY_CENTER;
+        symbol [ Graphics %tmp.203 128 43 51 ];
+        %tmp.203 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_VCENTER %tmp.204 128 52 72 ];
+        %tmp.204 = getv %tmp.203 :TEXT_JUSTIFY_VCENTER;
+        %tmp.205 = bitor %tmp.202 %tmp.204;
+        symbol [ Graphics %tmp.206 128 75 83 ];
+        %tmp.206 = getm $.Toybox.Graphics;
+        symbol [ FONT_LARGE %tmp.207 128 84 94 ];
+        %tmp.207 = getv %tmp.206 :FONT_LARGE;
+        %tmp.208 = bitor %tmp.205 %tmp.207;
+        invoke %tmp.190 %tmp.191(%tmp.194, %tmp.197, %tmp.199, %tmp.200, %tmp.208);
+[ "/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" 132 8 ]
+        %tmp.209 = lgetv %dc;
+        symbol [ dc %tmp.209 132 8 10 ];
+        symbol [ drawText %tmp.210 132 11 19 ];
+        %tmp.210 = getv function %tmp.209 :drawText;
+        %tmp.211 = lgetv %w.1;
+        symbol [ w %tmp.211 133 13 14 ];
+        %tmp.212 = 2;
+        %tmp.213 = div %tmp.211 %tmp.212;
+        %tmp.214 = 4;
+        %tmp.215 = add %tmp.213 %tmp.214;
+        %tmp.216 = lgetv %ySunRow.22;
+        symbol [ ySunRow %tmp.216 134 12 19 ];
+        symbol [ Graphics %tmp.217 135 12 20 ];
+        %tmp.217 = getm $.Toybox.Graphics;
+        symbol [ FONT_SMALL %tmp.218 135 21 31 ];
+        %tmp.218 = getv %tmp.217 :FONT_SMALL;
+        %tmp.219 = lgetv %sunLine.18;
+        symbol [ sunLine %tmp.219 136 12 19 ];
+        symbol [ Graphics %tmp.220 137 12 20 ];
+        %tmp.220 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.221 137 21 40 ];
+        %tmp.221 = getv %tmp.220 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.209 %tmp.210(%tmp.215, %tmp.216, %tmp.218, %tmp.219, %tmp.221);
+_Users_guyfriedman_Documents_GuysUtil_MonkeyC_instinct3attempt3_source_instinct3attempt3View_mc_21_32_139_4_stop:
+    }
+    [ @file = "/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc"; @line = 142; @symbol_functiondef = [_getSunTimes,142,13,25]; ]
+    function _getSunTimes() {
+_Users_guyfriedman_Documents_GuysUtil_MonkeyC_instinct3attempt3_source_instinct3attempt3View_mc_142_28_184_4_start:
+[ "/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" 143 8 ]
+        [ "_Users_guyfriedman_Documents_GuysUtil_MonkeyC_instinct3attempt3_source_instinct3attempt3View_mc_142_28_184_4_start" "_Users_guyfriedman_Documents_GuysUtil_MonkeyC_instinct3attempt3_source_instinct3attempt3View_mc_142_28_184_4_stop" ]
+        %result.1 = local;
+        symbol [ result %result.1 143 12 18 ];
+        %tmp.1 = newd 2;
+        %tmp.3 = const :sunrise;
+        symbol [ sunrise %tmp.3 144 13 20 const ];
+        %tmp.4 = "--:--";
+        %tmp.5 = dup %tmp.1;
+        %tmp.6 = aputv %tmp.5 %tmp.3 %tmp.4;
+        %tmp.8 = const :sunset;
+        symbol [ sunset %tmp.8 145 13 19 const ];
+        %tmp.9 = "--:--";
+        %tmp.10 = dup %tmp.6;
+        %tmp.11 = aputv %tmp.10 %tmp.8 %tmp.9;
+        lputv %result.1 %tmp.11;
+        symbol [ result %result.1 143 12 18 ];
+[ "/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" 148 8 ]
+_Users_guyfriedman_Documents_GuysUtil_MonkeyC_instinct3attempt3_source_instinct3attempt3View_mc_148_8_150_8_if_stmt:
+        symbol [ Toybox %tmp.13 148 14 20 ];
+        %tmp.13 = getv ? :Toybox;
+        %tmp.15 = const :Weather;
+        symbol [ Weather %tmp.15 148 26 33 const ];
+        %tmp.16 = canhazplz %tmp.13 %tmp.15;
+        %tmp.17 = not %tmp.16;
+        bf %tmp.17 @_Users_guyfriedman_Documents_GuysUtil_MonkeyC_instinct3attempt3_source_instinct3attempt3View_mc_148_8_150_8_if_end;
+_Users_guyfriedman_Documents_GuysUtil_MonkeyC_instinct3attempt3_source_instinct3attempt3View_mc_148_8_150_8_if_true:
+_Users_guyfriedman_Documents_GuysUtil_MonkeyC_instinct3attempt3_source_instinct3attempt3View_mc_148_36_150_8_start:
+[ "/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" 149 12 ]
+        %tmp.18 = lgetv %result.1;
+        symbol [ result %tmp.18 149 19 25 ];
+        ret %tmp.18;
+_Users_guyfriedman_Documents_GuysUtil_MonkeyC_instinct3attempt3_source_instinct3attempt3View_mc_148_36_150_8_stop:
+        goto @_Users_guyfriedman_Documents_GuysUtil_MonkeyC_instinct3attempt3_source_instinct3attempt3View_mc_148_8_150_8_if_end;
+_Users_guyfriedman_Documents_GuysUtil_MonkeyC_instinct3attempt3_source_instinct3attempt3View_mc_148_8_150_8_if_end:
+[ "/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" 152 8 ]
+        [ "_Users_guyfriedman_Documents_GuysUtil_MonkeyC_instinct3attempt3_source_instinct3attempt3View_mc_142_28_184_4_start" "_Users_guyfriedman_Documents_GuysUtil_MonkeyC_instinct3attempt3_source_instinct3attempt3View_mc_142_28_184_4_stop" ]
+        %cond.2 = local;
+        symbol [ cond %cond.2 152 12 16 ];
+        symbol [ Weather %tmp.19 152 19 26 ];
+        %tmp.19 = getm $.Toybox.Weather;
+        symbol [ getCurrentConditions %tmp.20 152 27 47 ];
+        %tmp.20 = getv function %tmp.19 :getCurrentConditions;
+        %tmp.21 = invoke %tmp.19 %tmp.20();
+        lputv %cond.2 %tmp.21;
+        symbol [ cond %cond.2 152 12 16 ];
+[ "/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" 153 8 ]
+_Users_guyfriedman_Documents_GuysUtil_MonkeyC_instinct3attempt3_source_instinct3attempt3View_mc_153_8_155_8_if_stmt:
+        %tmp.22 = lgetv %cond.2;
+        symbol [ cond %tmp.22 153 12 16 ];
+        %tmp.23 = null;
+        %tmp.24 = eq %tmp.22 %tmp.23;
+        bf %tmp.24 @_Users_guyfriedman_Documents_GuysUtil_MonkeyC_instinct3attempt3_source_instinct3attempt3View_mc_153_8_155_8_if_end;
+_Users_guyfriedman_Documents_GuysUtil_MonkeyC_instinct3attempt3_source_instinct3attempt3View_mc_153_8_155_8_if_true:
+_Users_guyfriedman_Documents_GuysUtil_MonkeyC_instinct3attempt3_source_instinct3attempt3View_mc_153_26_155_8_start:
+[ "/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" 154 12 ]
+        %tmp.25 = lgetv %result.1;
+        symbol [ result %tmp.25 154 19 25 ];
+        ret %tmp.25;
+_Users_guyfriedman_Documents_GuysUtil_MonkeyC_instinct3attempt3_source_instinct3attempt3View_mc_153_26_155_8_stop:
+        goto @_Users_guyfriedman_Documents_GuysUtil_MonkeyC_instinct3attempt3_source_instinct3attempt3View_mc_153_8_155_8_if_end;
+_Users_guyfriedman_Documents_GuysUtil_MonkeyC_instinct3attempt3_source_instinct3attempt3View_mc_153_8_155_8_if_end:
+[ "/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" 157 8 ]
+        [ "_Users_guyfriedman_Documents_GuysUtil_MonkeyC_instinct3attempt3_source_instinct3attempt3View_mc_142_28_184_4_start" "_Users_guyfriedman_Documents_GuysUtil_MonkeyC_instinct3attempt3_source_instinct3attempt3View_mc_142_28_184_4_stop" ]
+        %loc.3 = local;
+        symbol [ loc %loc.3 157 12 15 ];
+        %tmp.26 = lgetv %cond.2;
+        symbol [ cond %tmp.26 157 19 23 ];
+        symbol [ observationLocationPosition %tmp.27 157 24 51 ];
+        %tmp.27 = getv %tmp.26 :observationLocationPosition;
+        lputv %loc.3 %tmp.27;
+        symbol [ loc %loc.3 157 12 15 ];
+[ "/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" 158 8 ]
+        [ "_Users_guyfriedman_Documents_GuysUtil_MonkeyC_instinct3attempt3_source_instinct3attempt3View_mc_142_28_184_4_start" "_Users_guyfriedman_Documents_GuysUtil_MonkeyC_instinct3attempt3_source_instinct3attempt3View_mc_142_28_184_4_stop" ]
+        %date.4 = local;
+        symbol [ date %date.4 158 12 16 ];
+        %tmp.28 = lgetv %cond.2;
+        symbol [ cond %tmp.28 158 19 23 ];
+        symbol [ observationTime %tmp.29 158 24 39 ];
+        %tmp.29 = getv %tmp.28 :observationTime;
+        lputv %date.4 %tmp.29;
+        symbol [ date %date.4 158 12 16 ];
+[ "/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" 160 8 ]
+_Users_guyfriedman_Documents_GuysUtil_MonkeyC_instinct3attempt3_source_instinct3attempt3View_mc_160_8_162_8_if_stmt:
+_Users_guyfriedman_Documents_GuysUtil_MonkeyC_instinct3attempt3_source_instinct3attempt3View_mc_160_12_160_35_begin:
+        %tmp.30 = lgetv %loc.3;
+        symbol [ loc %tmp.30 160 12 15 ];
+        %tmp.31 = null;
+        %tmp.32 = eq %tmp.30 %tmp.31;
+        bt %tmp.32 @_Users_guyfriedman_Documents_GuysUtil_MonkeyC_instinct3attempt3_source_instinct3attempt3View_mc_160_8_162_8_if_true;
+_Users_guyfriedman_Documents_GuysUtil_MonkeyC_instinct3attempt3_source_instinct3attempt3View_mc_160_27_160_35_false:
+        %tmp.33 = lgetv %date.4;
+        symbol [ date %tmp.33 160 27 31 ];
+        %tmp.34 = null;
+        %tmp.35 = eq %tmp.33 %tmp.34;
+        push %tmp.35;
+_Users_guyfriedman_Documents_GuysUtil_MonkeyC_instinct3attempt3_source_instinct3attempt3View_mc_160_27_160_35_end:
+        %tmp.36 = phi [%tmp.32 @_Users_guyfriedman_Documents_GuysUtil_MonkeyC_instinct3attempt3_source_instinct3attempt3View_mc_160_12_160_35_begin] [%tmp.35 @_Users_guyfriedman_Documents_GuysUtil_MonkeyC_instinct3attempt3_source_instinct3attempt3View_mc_160_27_160_35_false] [%tmp.36 @_Users_guyfriedman_Documents_GuysUtil_MonkeyC_instinct3attempt3_source_instinct3attempt3View_mc_160_27_160_35_end];
+        bf %tmp.36 @_Users_guyfriedman_Documents_GuysUtil_MonkeyC_instinct3attempt3_source_instinct3attempt3View_mc_160_8_162_8_if_end;
+_Users_guyfriedman_Documents_GuysUtil_MonkeyC_instinct3attempt3_source_instinct3attempt3View_mc_160_8_162_8_if_true:
+_Users_guyfriedman_Documents_GuysUtil_MonkeyC_instinct3attempt3_source_instinct3attempt3View_mc_160_41_162_8_start:
+[ "/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" 161 12 ]
+        %tmp.37 = lgetv %result.1;
+        symbol [ result %tmp.37 161 19 25 ];
+        ret %tmp.37;
+_Users_guyfriedman_Documents_GuysUtil_MonkeyC_instinct3attempt3_source_instinct3attempt3View_mc_160_41_162_8_stop:
+        goto @_Users_guyfriedman_Documents_GuysUtil_MonkeyC_instinct3attempt3_source_instinct3attempt3View_mc_160_8_162_8_if_end;
+_Users_guyfriedman_Documents_GuysUtil_MonkeyC_instinct3attempt3_source_instinct3attempt3View_mc_160_8_162_8_if_end:
+[ "/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" 164 8 ]
+        [ "_Users_guyfriedman_Documents_GuysUtil_MonkeyC_instinct3attempt3_source_instinct3attempt3View_mc_142_28_184_4_start" "_Users_guyfriedman_Documents_GuysUtil_MonkeyC_instinct3attempt3_source_instinct3attempt3View_mc_142_28_184_4_stop" ]
+        %sr.5 = local;
+        symbol [ sr %sr.5 164 12 14 ];
+        symbol [ Weather %tmp.38 164 17 24 ];
+        %tmp.38 = getm $.Toybox.Weather;
+        symbol [ getSunrise %tmp.39 164 25 35 ];
+        %tmp.39 = getv function %tmp.38 :getSunrise;
+        %tmp.40 = lgetv %loc.3;
+        symbol [ loc %tmp.40 164 36 39 ];
+        %tmp.41 = lgetv %date.4;
+        symbol [ date %tmp.41 164 41 45 ];
+        %tmp.42 = invoke %tmp.38 %tmp.39(%tmp.40, %tmp.41);
+        lputv %sr.5 %tmp.42;
+        symbol [ sr %sr.5 164 12 14 ];
+[ "/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" 165 8 ]
+        [ "_Users_guyfriedman_Documents_GuysUtil_MonkeyC_instinct3attempt3_source_instinct3attempt3View_mc_142_28_184_4_start" "_Users_guyfriedman_Documents_GuysUtil_MonkeyC_instinct3attempt3_source_instinct3attempt3View_mc_142_28_184_4_stop" ]
+        %ss.6 = local;
+        symbol [ ss %ss.6 165 12 14 ];
+        symbol [ Weather %tmp.43 165 17 24 ];
+        %tmp.43 = getm $.Toybox.Weather;
+        symbol [ getSunset %tmp.44 165 25 34 ];
+        %tmp.44 = getv function %tmp.43 :getSunset;
+        %tmp.45 = lgetv %loc.3;
+        symbol [ loc %tmp.45 165 35 38 ];
+        %tmp.46 = lgetv %date.4;
+        symbol [ date %tmp.46 165 40 44 ];
+        %tmp.47 = invoke %tmp.43 %tmp.44(%tmp.45, %tmp.46);
+        lputv %ss.6 %tmp.47;
+        symbol [ ss %ss.6 165 12 14 ];
+[ "/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" 167 8 ]
+_Users_guyfriedman_Documents_GuysUtil_MonkeyC_instinct3attempt3_source_instinct3attempt3View_mc_167_8_173_8_if_stmt:
+        %tmp.48 = lgetv %sr.5;
+        symbol [ sr %tmp.48 167 12 14 ];
+        %tmp.49 = null;
+        %tmp.50 = ne %tmp.48 %tmp.49;
+        bf %tmp.50 @_Users_guyfriedman_Documents_GuysUtil_MonkeyC_instinct3attempt3_source_instinct3attempt3View_mc_167_8_173_8_if_end;
+_Users_guyfriedman_Documents_GuysUtil_MonkeyC_instinct3attempt3_source_instinct3attempt3View_mc_167_8_173_8_if_true:
+_Users_guyfriedman_Documents_GuysUtil_MonkeyC_instinct3attempt3_source_instinct3attempt3View_mc_167_24_173_8_start:
+[ "/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" 168 12 ]
+        [ "_Users_guyfriedman_Documents_GuysUtil_MonkeyC_instinct3attempt3_source_instinct3attempt3View_mc_167_24_173_8_start" "_Users_guyfriedman_Documents_GuysUtil_MonkeyC_instinct3attempt3_source_instinct3attempt3View_mc_167_24_173_8_stop" ]
+        %gsr.7 = local;
+        symbol [ gsr %gsr.7 168 16 19 ];
+        symbol [ Time %tmp.51 168 22 26 ];
+        %tmp.51 = getm $.Toybox.Time;
+        symbol [ Gregorian %tmp.52 168 27 36 ];
+        %tmp.52 = getv %tmp.51 :Gregorian;
+        symbol [ info %tmp.53 168 37 41 ];
+        %tmp.53 = getv function %tmp.52 :info;
+        %tmp.54 = lgetv %sr.5;
+        symbol [ sr %tmp.54 168 42 44 ];
+        %tmp.55 = as %tmp.54 { (!Null) };
+        symbol [ Time %tmp.56 168 46 50 ];
+        %tmp.56 = getm $.Toybox.Time;
+        symbol [ FORMAT_SHORT %tmp.57 168 51 63 ];
+        %tmp.57 = getv %tmp.56 :FORMAT_SHORT;
+        %tmp.58 = invoke %tmp.52 %tmp.53(%tmp.55, %tmp.57);
+        lputv %gsr.7 %tmp.58;
+        symbol [ gsr %gsr.7 168 16 19 ];
+[ "/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" 169 12 ]
+        %tmp.59 = lgetv %result.1;
+        symbol [ result %tmp.59 169 12 18 ];
+        symbol [ Lang %tmp.60 169 31 35 ];
+        %tmp.60 = getm $.Toybox.Lang;
+        symbol [ format %tmp.61 169 36 42 ];
+        %tmp.61 = getv function %tmp.60 :format;
+        %tmp.62 = "$1$:$2$";
+        %tmp.63 = newa 2;
+        %tmp.64 = lgetv %gsr.7;
+        symbol [ gsr %tmp.64 170 16 19 ];
+        symbol [ hour %tmp.65 170 20 24 ];
+        %tmp.65 = getv %tmp.64 :hour;
+        symbol [ format %tmp.66 170 25 31 ];
+        %tmp.66 = getv function %tmp.65 :format;
+        %tmp.67 = "%02d";
+        %tmp.68 = invoke %tmp.65 %tmp.66(%tmp.67);
+        %tmp.69 = dup %tmp.63;
+        %tmp.70 = aputv %tmp.69 0 %tmp.68;
+        %tmp.71 = lgetv %gsr.7;
+        symbol [ gsr %tmp.71 171 16 19 ];
+        symbol [ min %tmp.72 171 20 23 ];
+        %tmp.72 = getv %tmp.71 :min;
+        symbol [ format %tmp.73 171 24 30 ];
+        %tmp.73 = getv function %tmp.72 :format;
+        %tmp.74 = "%02d";
+        %tmp.75 = invoke %tmp.72 %tmp.73(%tmp.74);
+        %tmp.76 = dup %tmp.70;
+        %tmp.77 = aputv %tmp.76 1 %tmp.75;
+        %tmp.78 = invoke %tmp.60 %tmp.61(%tmp.62, %tmp.77);
+        %tmp.80 = const :sunrise;
+        symbol [ sunrise %tmp.80 169 20 27 const ];
+        aputv %tmp.59 %tmp.80 %tmp.78;
+_Users_guyfriedman_Documents_GuysUtil_MonkeyC_instinct3attempt3_source_instinct3attempt3View_mc_167_24_173_8_stop:
+        goto @_Users_guyfriedman_Documents_GuysUtil_MonkeyC_instinct3attempt3_source_instinct3attempt3View_mc_167_8_173_8_if_end;
+_Users_guyfriedman_Documents_GuysUtil_MonkeyC_instinct3attempt3_source_instinct3attempt3View_mc_167_8_173_8_if_end:
+[ "/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" 175 8 ]
+_Users_guyfriedman_Documents_GuysUtil_MonkeyC_instinct3attempt3_source_instinct3attempt3View_mc_175_8_181_8_if_stmt:
+        %tmp.81 = lgetv %ss.6;
+        symbol [ ss %tmp.81 175 12 14 ];
+        %tmp.82 = null;
+        %tmp.83 = ne %tmp.81 %tmp.82;
+        bf %tmp.83 @_Users_guyfriedman_Documents_GuysUtil_MonkeyC_instinct3attempt3_source_instinct3attempt3View_mc_175_8_181_8_if_end;
+_Users_guyfriedman_Documents_GuysUtil_MonkeyC_instinct3attempt3_source_instinct3attempt3View_mc_175_8_181_8_if_true:
+_Users_guyfriedman_Documents_GuysUtil_MonkeyC_instinct3attempt3_source_instinct3attempt3View_mc_175_24_181_8_start:
+[ "/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" 176 12 ]
+        [ "_Users_guyfriedman_Documents_GuysUtil_MonkeyC_instinct3attempt3_source_instinct3attempt3View_mc_175_24_181_8_start" "_Users_guyfriedman_Documents_GuysUtil_MonkeyC_instinct3attempt3_source_instinct3attempt3View_mc_175_24_181_8_stop" ]
+        %gss.8 = local;
+        symbol [ gss %gss.8 176 16 19 ];
+        symbol [ Time %tmp.84 176 22 26 ];
+        %tmp.84 = getm $.Toybox.Time;
+        symbol [ Gregorian %tmp.85 176 27 36 ];
+        %tmp.85 = getv %tmp.84 :Gregorian;
+        symbol [ info %tmp.86 176 37 41 ];
+        %tmp.86 = getv function %tmp.85 :info;
+        %tmp.87 = lgetv %ss.6;
+        symbol [ ss %tmp.87 176 42 44 ];
+        %tmp.88 = as %tmp.87 { (!Null) };
+        symbol [ Time %tmp.89 176 46 50 ];
+        %tmp.89 = getm $.Toybox.Time;
+        symbol [ FORMAT_SHORT %tmp.90 176 51 63 ];
+        %tmp.90 = getv %tmp.89 :FORMAT_SHORT;
+        %tmp.91 = invoke %tmp.85 %tmp.86(%tmp.88, %tmp.90);
+        lputv %gss.8 %tmp.91;
+        symbol [ gss %gss.8 176 16 19 ];
+[ "/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" 177 12 ]
+        %tmp.92 = lgetv %result.1;
+        symbol [ result %tmp.92 177 12 18 ];
+        symbol [ Lang %tmp.93 177 30 34 ];
+        %tmp.93 = getm $.Toybox.Lang;
+        symbol [ format %tmp.94 177 35 41 ];
+        %tmp.94 = getv function %tmp.93 :format;
+        %tmp.95 = "$1$:$2$";
+        %tmp.96 = newa 2;
+        %tmp.97 = lgetv %gss.8;
+        symbol [ gss %tmp.97 178 16 19 ];
+        symbol [ hour %tmp.98 178 20 24 ];
+        %tmp.98 = getv %tmp.97 :hour;
+        symbol [ format %tmp.99 178 25 31 ];
+        %tmp.99 = getv function %tmp.98 :format;
+        %tmp.100 = "%02d";
+        %tmp.101 = invoke %tmp.98 %tmp.99(%tmp.100);
+        %tmp.102 = dup %tmp.96;
+        %tmp.103 = aputv %tmp.102 0 %tmp.101;
+        %tmp.104 = lgetv %gss.8;
+        symbol [ gss %tmp.104 179 16 19 ];
+        symbol [ min %tmp.105 179 20 23 ];
+        %tmp.105 = getv %tmp.104 :min;
+        symbol [ format %tmp.106 179 24 30 ];
+        %tmp.106 = getv function %tmp.105 :format;
+        %tmp.107 = "%02d";
+        %tmp.108 = invoke %tmp.105 %tmp.106(%tmp.107);
+        %tmp.109 = dup %tmp.103;
+        %tmp.110 = aputv %tmp.109 1 %tmp.108;
+        %tmp.111 = invoke %tmp.93 %tmp.94(%tmp.95, %tmp.110);
+        %tmp.113 = const :sunset;
+        symbol [ sunset %tmp.113 177 20 26 const ];
+        aputv %tmp.92 %tmp.113 %tmp.111;
+_Users_guyfriedman_Documents_GuysUtil_MonkeyC_instinct3attempt3_source_instinct3attempt3View_mc_175_24_181_8_stop:
+        goto @_Users_guyfriedman_Documents_GuysUtil_MonkeyC_instinct3attempt3_source_instinct3attempt3View_mc_175_8_181_8_if_end;
+_Users_guyfriedman_Documents_GuysUtil_MonkeyC_instinct3attempt3_source_instinct3attempt3View_mc_175_8_181_8_if_end:
+[ "/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" 183 8 ]
+        %tmp.114 = lgetv %result.1;
+        symbol [ result %tmp.114 183 15 21 ];
+        ret %tmp.114;
+_Users_guyfriedman_Documents_GuysUtil_MonkeyC_instinct3attempt3_source_instinct3attempt3View_mc_142_28_184_4_stop:
+    }
+}
+[ @file = "/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc"; @line = 1; ]
+<init> {
+}
