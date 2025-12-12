@@ -7,14 +7,14 @@ import Toybox.Weather;
 
 
 
-const UPDATE_CYCLE_MINUTES = 2; // <- only update big screen once every UPDATE_CYCLE_MINUTES minutes
+const UPDATE_CYCLE_MINUTES = 5; // <- only update big screen once every UPDATE_CYCLE_MINUTES minutes
 const USING_45_MM_MODEL = true; // <- true: render for 45 mm model, false: render for 50 mm model.
 
 // dimension coordinates of the 'submarine screen' of the solar 45 mm model.
-const _SUB_X_45 = 115; //FIXME: GET CORRECT COORDINATES
-const _SUB_Y_45 = 5; //FIXME: GET CORRECT COORDINATES
-const _SUB_W_45 = 55; //FIXME: GET CORRECT COORDINATES
-const _SUB_H_45 = 55; //FIXME: GET CORRECT COORDINATES
+const _SUB_X_45 = 115;
+const _SUB_Y_45 = 5;
+const _SUB_W_45 = 55;
+const _SUB_H_45 = 55;
 // dimension coordinates of the 'submarine screen' of the solar 50 mm model.
 const _SUB_X_50 = 32; //FIXME: GET CORRECT COORDINATES
 const _SUB_Y_50 = 70; //FIXME: GET CORRECT COORDINATES
@@ -32,8 +32,8 @@ var _SUB_H;
 // Debug flags
 const DEBUG_MODE                 = true; // master switch
 const DEBUG_SHOW_SECONDS_IN_HH_MM = true; // DEBUG: show seconds in both HH and MM slots, set to false to restore real time
-const DEBUG_INVERT_SUB_COLOR = false;
-const DEBUG_INVERT_MAIN_COLOR = true;
+const DEBUG_INVERT_SUB_COLOR = true;
+const DEBUG_INVERT_MAIN_COLOR = false;
 
 // Helper: only true if global DEBUG_MODE is on *and* the specific flag is true
 function debug(flag) {
@@ -44,6 +44,7 @@ function debug(flag) {
 class instinct3attempt3View extends WatchUi.WatchFace {
 
     var _bigTimeFont; // FontReference
+    var _bigTimeHalfFont;
     var _w; // <- width
     var _h; // <- height
     var _battPctX; // battery % x
@@ -57,10 +58,14 @@ class instinct3attempt3View extends WatchUi.WatchFace {
     var _ySunRow; // sunrise/sunset
     var _hh;
     var _mm;
+    var _isInitialised = false;
+    var clk;
+
 
     function initialize() {
         WatchUi.WatchFace.initialize();
         _bigTimeFont = WatchUi.loadResource(Rez.Fonts.BigTime);
+        _bigTimeHalfFont = WatchUi.loadResource(Rez.Fonts.BigTimeHalf);
         if (USING_45_MM_MODEL){
             _SUB_X = _SUB_X_45;
             _SUB_Y = _SUB_Y_45;
@@ -75,7 +80,6 @@ class instinct3attempt3View extends WatchUi.WatchFace {
     }
 
     function onLayout(dc as Dc) {
-        // We draw everything manually in onUpdate
         _w = dc.getWidth();
         _h = dc.getHeight();
         _yTopRow  = 10;     // reference row for top texts
@@ -87,24 +91,28 @@ class instinct3attempt3View extends WatchUi.WatchFace {
         _battPctY = _yTopRow + 10; // battery % y
         _battPctX = _w - 30; // battery % x
         _battPctY = _yTopRow + 10; // battery % y
-        _extraMinutesDigitX = _battPctX;
-        _extraMinutesDigitY = _battPctY;
+        _extraMinutesDigitX = _battPctX ;
+        _extraMinutesDigitY = _battPctY ;
+        clk = System.getClockTime();
+        _redrawEntireScreen(dc);
     }
 
-    var _lastDrawnSlot = -1;
-    var clk;
+    //var _lastDrawnSlot = -1;
 
     function onUpdate(dc as Dc) {
         clk = System.getClockTime();
-        //var curr_slot = -1;
-        if (_lastDrawnSlot == -1){ // <- first draw, don't skip just draw
-            _redrawEntireScreen(dc);
-            _lastDrawnSlot = 0;
-        } else if (clk.min % UPDATE_CYCLE_MINUTES != 0) { // <- skip draws under UPDATE_CYCLE_MINUTES minute intervals (alligned with round hours, not startup time)
-            _redrawSubmarine(dc);
-        } else {
-            _redrawEntireScreen(dc);
+
+        // allow every second update only while debugging
+        if ((!debug(true)) && (clk.sec != 0)){return;}
+
+        var time_meausrement = clk.min;
+
+        if (debug(DEBUG_SHOW_SECONDS_IN_HH_MM)){time_meausrement=clk.sec;}
+
+        if (time_meausrement % UPDATE_CYCLE_MINUTES == 0) { // <- skip draws under UPDATE_CYCLE_MINUTES minute intervals (alligned with round hours, not startup time)
+            _redrawMainScreen(dc);
         }
+        _redrawSubmarine(dc);
 
     }
 
@@ -162,7 +170,7 @@ class instinct3attempt3View extends WatchUi.WatchFace {
 
         // ---------- Sunrise / Sunset ----------
         var sun = _getSunTimes();
-        var sunLine = Lang.format("$1$ ◊ $2$", [
+        var sunLine = Lang.format("$1$ ☀️ $2$", [
             sun[:sunrise],
             sun[:sunset]
         ]);
@@ -233,7 +241,7 @@ class instinct3attempt3View extends WatchUi.WatchFace {
             dc.drawText(
                 _battPctX,
                 _battPctY,
-                Graphics.FONT_SMALL,
+                Graphics.FONT_LARGE,
                 _getBatteryPctStr(),
                 Graphics.TEXT_JUSTIFY_CENTER
             );
@@ -242,7 +250,7 @@ class instinct3attempt3View extends WatchUi.WatchFace {
             dc.drawText(
                 _extraMinutesDigitX,
                 _extraMinutesDigitY,
-                Graphics.FONT_LARGE,
+                _bigTimeHalfFont,
                 extraMin,
                 Graphics.TEXT_JUSTIFY_CENTER
             );
