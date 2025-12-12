@@ -5,6 +5,16 @@ import Toybox.Time;
 import Toybox.WatchUi;
 import Toybox.Weather;
 
+
+// Debug flags
+const DEBUG_MODE                 = false; // master switch
+const DEBUG_SHOW_SECONDS_IN_HH_MM = false; // DEBUG: show seconds in both HH and MM slots, set to false to restore real time
+
+// Helper: only true if global DEBUG_MODE is on *and* the specific flag is true
+function debug(flag) {
+    return DEBUG_MODE and flag;
+}
+
 class instinct3attempt3View extends WatchUi.WatchFace {
 
     var _bigTimeFont; // FontReference
@@ -26,12 +36,36 @@ class instinct3attempt3View extends WatchUi.WatchFace {
         var w = dc.getWidth();
         var h = dc.getHeight();
 
+        /* TODO: uncomment after debugging digits!
         // ---------- Time (HH:MM, big number font) ----------
         var clk = System.getClockTime();
         var timeStr = Lang.format("$1$:$2$", [
             clk.hour.format("%02d"),
             clk.min.format("%02d")
         ]);
+        */
+
+        // ---------- Time (HH:MM, big number font) ----------
+        var clk = System.getClockTime();
+
+
+
+        var hh;
+        var mm;
+
+        if (debug(DEBUG_SHOW_SECONDS_IN_HH_MM)) {
+            hh = clk.sec;
+            mm = clk.sec;
+        } else {
+            hh = clk.hour;
+            mm = clk.min;
+        }
+
+        var timeStr = Lang.format("$1$:$2$", [
+            hh.format("%02d"),
+            mm.format("%02d")
+        ]);
+
 
         /*
         // Largest built-in numeric font available on this device
@@ -40,7 +74,7 @@ class instinct3attempt3View extends WatchUi.WatchFace {
 
         
         // Custom bitmap font for big time digits
-        var timeFont = Rez.Fonts.BigTime;
+        //var timeFont = Rez.Fonts.BigTime;
         
 
         // ---------- Date + DOW ----------
@@ -125,7 +159,7 @@ class instinct3attempt3View extends WatchUi.WatchFace {
             yTime + 15,
             _bigTimeFont,
             timeStr,
-            Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER | Graphics.FONT_LARGE
+            Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER
         );
 
         // Sunrise / sunset: slightly to the right of center
