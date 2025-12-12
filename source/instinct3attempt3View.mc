@@ -30,7 +30,7 @@ var _SUB_H;
 
 
 // Debug flags
-const DEBUG_MODE                 = true; // master switch
+const DEBUG_MODE                 = false; // master switch
 const DEBUG_SHOW_SECONDS_IN_HH_MM = true; // DEBUG: show seconds in both HH and MM slots, set to false to restore real time
 const DEBUG_INVERT_SUB_COLOR = true;
 const DEBUG_INVERT_MAIN_COLOR = false;
