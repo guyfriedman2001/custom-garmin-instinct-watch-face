@@ -1,0 +1,15 @@
+info face="bigtime" size=49 bold=0 italic=0 charset="" unicode=0 stretchH=100 smooth=1 aa=1 padding=0,0,0,0 spacing=0,0
+common lineHeight=24 base=24 scaleW=179 scaleH=24 pages=1 packed=0
+page id=0 file="bigtime_half_uniform.png"
+chars count=11
+char id=48   x=0   y=0    width=17    height=24    xoffset=0    yoffset=0    xadvance=19    page=0  chnl=15
+char id=49   x=18   y=0    width=15    height=24    xoffset=0    yoffset=0    xadvance=17    page=0  chnl=15
+char id=50   x=34   y=0    width=16    height=24    xoffset=0    yoffset=0    xadvance=18    page=0  chnl=15
+char id=51   x=50   y=0    width=16    height=24    xoffset=0    yoffset=0    xadvance=18    page=0  chnl=15
+char id=52   x=68   y=0    width=18    height=24    xoffset=0    yoffset=0    xadvance=20    page=0  chnl=15
+char id=53   x=86   y=0    width=16    height=24    xoffset=0    yoffset=0    xadvance=18    page=0  chnl=15
+char id=54   x=104   y=0    width=16    height=24    xoffset=0    yoffset=0    xadvance=18    page=0  chnl=15
+char id=55   x=121   y=0    width=16    height=24    xoffset=0    yoffset=0    xadvance=18    page=0  chnl=15
+char id=56   x=138   y=0    width=16    height=24    xoffset=0    yoffset=0    xadvance=18    page=0  chnl=15
+char id=57   x=156   y=0    width=16    height=24    xoffset=0    yoffset=0    xadvance=18    page=0  chnl=15
+char id=58   x=173   y=0    width=5    height=24    xoffset=0    yoffset=0    xadvance=7    page=0  chnl=15

@@ -11,6 +11,7 @@ module Rez {
 
     module Fonts {
         (:initialized) var BigTime as ResourceId;
+        (:initialized) var BigTimeHalf as ResourceId;
     } // Fonts
 
     module Layouts {

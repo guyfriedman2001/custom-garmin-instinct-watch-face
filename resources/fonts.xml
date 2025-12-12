@@ -1,10 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources>
     <fonts>
-        <!-- Only digits and ':' are needed for time -->
+        <!-- Full-size digits for main time -->
         <font
             id="BigTime"
             filename="fonts/bigtime.fnt"
+            antialias="true"
+            filter="0123456789:" />
+
+        <!-- Half-height digits for secondary display -->
+        <font
+            id="BigTimeHalf"
+            filename="fonts/bigtime_half.fnt"
             antialias="true"
             filter="0123456789:" />
     </fonts>
