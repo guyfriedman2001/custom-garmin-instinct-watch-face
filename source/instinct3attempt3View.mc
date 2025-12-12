@@ -7,7 +7,7 @@ import Toybox.Weather;
 
 
 
-const UPDATE_CYCLE_MINUTES = 5; // <- only update big screen once every UPDATE_CYCLE_MINUTES minutes
+const UPDATE_CYCLE_MINUTES = 10; // <- only update big screen once every UPDATE_CYCLE_MINUTES minutes
 const USING_45_MM_MODEL = true; // <- true: render for 45 mm model, false: render for 50 mm model.
 
 // dimension coordinates of the 'submarine screen' of the solar 45 mm model.
@@ -33,7 +33,7 @@ var _SUB_H;
 const DEBUG_MODE                 = false; // master switch
 const DEBUG_SHOW_SECONDS_IN_HH_MM = true; // DEBUG: show seconds in both HH and MM slots, set to false to restore real time
 const DEBUG_INVERT_SUB_COLOR = true;
-const DEBUG_INVERT_MAIN_COLOR = false;
+const DEBUG_INVERT_MAIN_COLOR = true;
 
 // Helper: only true if global DEBUG_MODE is on *and* the specific flag is true
 function debug(flag) {
@@ -55,7 +55,9 @@ class instinct3attempt3View extends WatchUi.WatchFace {
     var _yDateRow;     // date below
     var _dateX;
     var _yTime;  // big time center
+    var _xTime;  // big time center
     var _ySunRow; // sunrise/sunset
+    var _xSunRow; // sunrise/sunset
     var _hh;
     var _mm;
     var _isInitialised = false;
@@ -85,22 +87,33 @@ class instinct3attempt3View extends WatchUi.WatchFace {
         _yTopRow  = 10;     // reference row for top texts
         _yDateRow = 40;     // date below
         _dateX = (_w / 2) - 80;
-        _yTime    = _h / 2;  // big time center
+        _yTime    = (_h / 2)+15;  // big time center
+        _xTime =  (_w / 2);
         _ySunRow  = _h - 26; // sunrise/sunset
+        _xSunRow  = (_w / 2);
         _battPctX = _w - 30; // battery % x
         _battPctY = _yTopRow + 10; // battery % y
         _battPctX = _w - 30; // battery % x
         _battPctY = _yTopRow + 10; // battery % y
         _extraMinutesDigitX = _battPctX ;
         _extraMinutesDigitY = _battPctY ;
-        clk = System.getClockTime();
-        _redrawEntireScreen(dc);
+        _isInitialised = false;
+    }
+
+    function onShow() {
+        // We are visible again (returned from glances/notifications)
+        _isInitialised = false;
     }
 
     //var _lastDrawnSlot = -1;
 
     function onUpdate(dc as Dc) {
         clk = System.getClockTime();
+
+        if (!_isInitialised){ // <- handle returning from notifications or gestures
+            _redrawEntireScreen(dc);
+            _isInitialised = true;
+        }
 
         // allow every second update only while debugging
         if ((!debug(true)) && (clk.sec != 0)){return;}
@@ -171,8 +184,8 @@ class instinct3attempt3View extends WatchUi.WatchFace {
         // ---------- Sunrise / Sunset ----------
         var sun = _getSunTimes();
         var sunLine = Lang.format("$1$ ☀️ $2$", [
-            sun[:sunrise],
-            sun[:sunset]
+            sun[:sunset],
+            sun[:sunrise]
         ]);
 
         // ---------- Layout coordinates ----------
@@ -201,8 +214,8 @@ class instinct3attempt3View extends WatchUi.WatchFace {
 
         // Big time in center
         dc.drawText(
-            _w / 2,
-            _yTime + 15,
+            _xTime,
+            _yTime,
             _bigTimeFont,
             timeStr,
             Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER
@@ -210,7 +223,7 @@ class instinct3attempt3View extends WatchUi.WatchFace {
 
         // Sunrise / sunset: slightly to the right of center
         dc.drawText(
-            (_w / 2) + 4,
+            _xSunRow,
             _ySunRow,
             Graphics.FONT_SMALL,
             sunLine,
@@ -268,8 +281,8 @@ class instinct3attempt3View extends WatchUi.WatchFace {
     // Helper: get sunrise/sunset as "HH:MM", with safe fallbacks
     function _getSunTimes() {
         var result = {
-            :sunrise => "--:--",
-            :sunset  => "--:--"
+            :sunset => "--:--",
+            :sunrise  => "--:--"
         };
 
         if (!(Toybox has :Weather)) {
