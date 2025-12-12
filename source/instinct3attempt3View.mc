@@ -9,6 +9,7 @@ import Toybox.Weather;
 
 const UPDATE_CYCLE_MINUTES = 10; // <- only update big screen once every UPDATE_CYCLE_MINUTES minutes
 const USING_45_MM_MODEL = true; // <- true: render for 45 mm model, false: render for 50 mm model.
+const SHOW_BATTERY_PCT_IMMEDIATELY_UPON_RETURN_TO_SCREEN = true; // <- other option is to have sub screen show the same minute as big screen
 
 // dimension coordinates of the 'submarine screen' of the solar 45 mm model.
 const _SUB_X_45 = 115;
@@ -61,6 +62,7 @@ class instinct3attempt3View extends WatchUi.WatchFace {
     var _hh;
     var _mm;
     var _isInitialised = false;
+    var _show_battery_now = false;
     var clk;
 
 
@@ -98,11 +100,13 @@ class instinct3attempt3View extends WatchUi.WatchFace {
         _extraMinutesDigitX = _battPctX ;
         _extraMinutesDigitY = _battPctY ;
         _isInitialised = false;
+        _show_battery_now = true;
     }
 
     function onShow() {
         // We are visible again (returned from glances/notifications)
         _isInitialised = false;
+        _show_battery_now = SHOW_BATTERY_PCT_IMMEDIATELY_UPON_RETURN_TO_SCREEN;
     }
 
     //var _lastDrawnSlot = -1;
@@ -249,7 +253,7 @@ class instinct3attempt3View extends WatchUi.WatchFace {
 
         if (debug(DEBUG_SHOW_SECONDS_IN_HH_MM)){ extraMin = clk.sec % UPDATE_CYCLE_MINUTES; }
         
-        if (extraMin == 0){
+        if (extraMin == 0 || _show_battery_now){
             // Battery %: middle of 'submarine screen'
             dc.drawText(
                 _battPctX,
@@ -258,6 +262,7 @@ class instinct3attempt3View extends WatchUi.WatchFace {
                 _getBatteryPctStr(),
                 Graphics.TEXT_JUSTIFY_CENTER
             );
+            _show_battery_now = false;
         } else {
             // Extra minute digit
             dc.drawText(
