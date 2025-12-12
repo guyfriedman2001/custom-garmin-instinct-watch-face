@@ -6,76 +6,134 @@ import Toybox.WatchUi;
 import Toybox.Weather;
 
 
+
+const UPDATE_CYCLE_MINUTES = 2; // <- only update big screen once every UPDATE_CYCLE_MINUTES minutes
+const USING_45_MM_MODEL = true; // <- true: render for 45 mm model, false: render for 50 mm model.
+
+// dimension coordinates of the 'submarine screen' of the solar 45 mm model.
+const _SUB_X_45 = 115; //FIXME: GET CORRECT COORDINATES
+const _SUB_Y_45 = 5; //FIXME: GET CORRECT COORDINATES
+const _SUB_W_45 = 55; //FIXME: GET CORRECT COORDINATES
+const _SUB_H_45 = 55; //FIXME: GET CORRECT COORDINATES
+// dimension coordinates of the 'submarine screen' of the solar 50 mm model.
+const _SUB_X_50 = 32; //FIXME: GET CORRECT COORDINATES
+const _SUB_Y_50 = 70; //FIXME: GET CORRECT COORDINATES
+const _SUB_W_50 = 112; //FIXME: GET CORRECT COORDINATES
+const _SUB_H_50 = 80; //FIXME: GET CORRECT COORDINATES
+
+
+var _SUB_X;
+var _SUB_Y;
+var _SUB_W;
+var _SUB_H;
+
+
+
 // Debug flags
-const DEBUG_MODE                 = false; // master switch
-const DEBUG_SHOW_SECONDS_IN_HH_MM = false; // DEBUG: show seconds in both HH and MM slots, set to false to restore real time
+const DEBUG_MODE                 = true; // master switch
+const DEBUG_SHOW_SECONDS_IN_HH_MM = true; // DEBUG: show seconds in both HH and MM slots, set to false to restore real time
+const DEBUG_INVERT_SUB_COLOR = false;
+const DEBUG_INVERT_MAIN_COLOR = true;
 
 // Helper: only true if global DEBUG_MODE is on *and* the specific flag is true
 function debug(flag) {
     return DEBUG_MODE and flag;
 }
 
+
 class instinct3attempt3View extends WatchUi.WatchFace {
 
     var _bigTimeFont; // FontReference
+    var _w; // <- width
+    var _h; // <- height
+    var _battPctX; // battery % x
+    var _battPctY; // battery % y
+    var _extraMinutesDigitX;
+    var _extraMinutesDigitY;
+    var _yTopRow;     // reference row for top texts
+    var _yDateRow;     // date below
+    var _dateX;
+    var _yTime;  // big time center
+    var _ySunRow; // sunrise/sunset
+    var _hh;
+    var _mm;
 
     function initialize() {
         WatchUi.WatchFace.initialize();
         _bigTimeFont = WatchUi.loadResource(Rez.Fonts.BigTime);
+        if (USING_45_MM_MODEL){
+            _SUB_X = _SUB_X_45;
+            _SUB_Y = _SUB_Y_45;
+            _SUB_W = _SUB_W_45;
+            _SUB_H = _SUB_H_45;
+        } else {
+            _SUB_X = _SUB_X_50;
+            _SUB_Y = _SUB_Y_50;
+            _SUB_W = _SUB_W_50;
+            _SUB_H = _SUB_H_50;
+        }
     }
 
     function onLayout(dc as Dc) {
         // We draw everything manually in onUpdate
+        _w = dc.getWidth();
+        _h = dc.getHeight();
+        _yTopRow  = 10;     // reference row for top texts
+        _yDateRow = 40;     // date below
+        _dateX = (_w / 2) - 80;
+        _yTime    = _h / 2;  // big time center
+        _ySunRow  = _h - 26; // sunrise/sunset
+        _battPctX = _w - 30; // battery % x
+        _battPctY = _yTopRow + 10; // battery % y
+        _battPctX = _w - 30; // battery % x
+        _battPctY = _yTopRow + 10; // battery % y
+        _extraMinutesDigitX = _battPctX;
+        _extraMinutesDigitY = _battPctY;
     }
 
+    var _lastDrawnSlot = -1;
+    var clk;
+
     function onUpdate(dc as Dc) {
+        clk = System.getClockTime();
+        //var curr_slot = -1;
+        if (_lastDrawnSlot == -1){ // <- first draw, don't skip just draw
+            _redrawEntireScreen(dc);
+            _lastDrawnSlot = 0;
+        } else if (clk.min % UPDATE_CYCLE_MINUTES != 0) { // <- skip draws under UPDATE_CYCLE_MINUTES minute intervals (alligned with round hours, not startup time)
+            _redrawSubmarine(dc);
+        } else {
+            _redrawEntireScreen(dc);
+        }
 
-        dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_BLACK);
-        dc.clear();
+    }
 
-        var w = dc.getWidth();
-        var h = dc.getHeight();
-
-        /* TODO: uncomment after debugging digits!
-        // ---------- Time (HH:MM, big number font) ----------
-        var clk = System.getClockTime();
-        var timeStr = Lang.format("$1$:$2$", [
-            clk.hour.format("%02d"),
-            clk.min.format("%02d")
-        ]);
-        */
-
-        // ---------- Time (HH:MM, big number font) ----------
-        var clk = System.getClockTime();
+    function _redrawEntireScreen(dc as Dc) as Void {
+        _redrawMainScreen(dc);
+        _redrawSubmarine(dc);
+    }
+    
+    function _redrawMainScreen(dc as Dc) as Void {
+        if (debug(DEBUG_INVERT_MAIN_COLOR)){
+            dc.setColor(Graphics.COLOR_BLACK, Graphics.COLOR_WHITE);
+        } else {
+            dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_BLACK);
+        }        dc.clear();
 
 
-
-        var hh;
-        var mm;
 
         if (debug(DEBUG_SHOW_SECONDS_IN_HH_MM)) {
-            hh = clk.sec;
-            mm = clk.sec;
+            _hh = clk.sec;
+            _mm = clk.sec;
         } else {
-            hh = clk.hour;
-            mm = clk.min;
+            _hh = clk.hour;
+            _mm = clk.min;
         }
 
         var timeStr = Lang.format("$1$:$2$", [
-            hh.format("%02d"),
-            mm.format("%02d")
+            _hh.format("%02d"),
+            _mm.format("%02d")
         ]);
-
-
-        /*
-        // Largest built-in numeric font available on this device
-        var timeFont = Graphics.FONT_NUMBER_HOT;
-        */
-
-        
-        // Custom bitmap font for big time digits
-        //var timeFont = Rez.Fonts.BigTime;
-        
 
         // ---------- Date + DOW ----------
         var now  = Time.now();
@@ -95,10 +153,12 @@ class instinct3attempt3View extends WatchUi.WatchFace {
             yearStr
         ]);
 
+        /*
         // ---------- Battery % ----------
         var stats      = System.getSystemStats();
         var battPct    = stats.battery; // 0–100
         var battPctStr = Lang.format("$1$%", [ battPct.format("%d") ]);
+        */
 
         // ---------- Sunrise / Sunset ----------
         var sun = _getSunTimes();
@@ -109,10 +169,7 @@ class instinct3attempt3View extends WatchUi.WatchFace {
 
         // ---------- Layout coordinates ----------
 
-        var yTopRow  = 10;     // reference row for top texts
-        var yDateRow = 26;     // date below
-        var yTime    = h / 2;  // big time center
-        var ySunRow  = h - 26; // sunrise/sunset
+
 
         // DOW: exactly at (61,18) with center justification
         dc.drawText(
@@ -123,31 +180,12 @@ class instinct3attempt3View extends WatchUi.WatchFace {
             Graphics.TEXT_JUSTIFY_CENTER
         );
 
-        /*
-        // Battery %: keep near top-right
-        dc.drawText( // <- use this after getting the battery icon to work
-            w - 30,
-            yTopRow + 25,
-            Graphics.FONT_SMALL,
-            battPctStr,
-            Graphics.TEXT_JUSTIFY_CENTER
-        );
-        */
 
-        // Battery %: middle of 'submarine screen'
-        dc.drawText( // <- use this after getting the battery icon to work
-            w - 30,
-            yTopRow + 10,
-            Graphics.FONT_SMALL,
-            battPctStr,
-            Graphics.TEXT_JUSTIFY_CENTER
-        );
 
         // Date: a bit left of center
-        var dateX = (w / 2) - 80;
         dc.drawText(
-            dateX,
-            yDateRow + 15,
+            _dateX,
+            _yDateRow,
             Graphics.FONT_SMALL,
             dateStr,
             Graphics.TEXT_JUSTIFY_LEFT
@@ -155,8 +193,8 @@ class instinct3attempt3View extends WatchUi.WatchFace {
 
         // Big time in center
         dc.drawText(
-            w / 2,
-            yTime + 15,
+            _w / 2,
+            _yTime + 15,
             _bigTimeFont,
             timeStr,
             Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER
@@ -164,12 +202,59 @@ class instinct3attempt3View extends WatchUi.WatchFace {
 
         // Sunrise / sunset: slightly to the right of center
         dc.drawText(
-            (w / 2) + 4,
-            ySunRow,
+            (_w / 2) + 4,
+            _ySunRow,
             Graphics.FONT_SMALL,
             sunLine,
             Graphics.TEXT_JUSTIFY_CENTER
         );
+    }
+
+
+    function _redrawSubmarine(dc as Dc) as Void {
+        dc.setClip(_SUB_X, _SUB_Y, _SUB_W, _SUB_H);
+
+        // Clear ONLY that region (clear respects clip)
+        if (debug(DEBUG_INVERT_SUB_COLOR)){
+            dc.setColor(Graphics.COLOR_BLACK, Graphics.COLOR_WHITE);
+        } else {
+            dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_BLACK);
+        }
+
+        dc.clear();
+
+    
+        var extraMin = clk.min % UPDATE_CYCLE_MINUTES;
+
+        if (debug(DEBUG_SHOW_SECONDS_IN_HH_MM)){ extraMin = clk.sec % UPDATE_CYCLE_MINUTES; }
+        
+        if (extraMin == 0){
+            // Battery %: middle of 'submarine screen'
+            dc.drawText(
+                _battPctX,
+                _battPctY,
+                Graphics.FONT_SMALL,
+                _getBatteryPctStr(),
+                Graphics.TEXT_JUSTIFY_CENTER
+            );
+        } else {
+            // Extra minute digit
+            dc.drawText(
+                _extraMinutesDigitX,
+                _extraMinutesDigitY,
+                Graphics.FONT_LARGE,
+                extraMin,
+                Graphics.TEXT_JUSTIFY_CENTER
+            );
+        }
+
+        dc.clearClip();
+    }
+
+    function _getBatteryPctStr() as String {
+        var stats   = System.getSystemStats();
+        var battPct = stats.battery; // 0–100
+        return Lang.format("$1$%", [ battPct.format("%d") ]);
     }
 
     // Helper: get sunrise/sunset as "HH:MM", with safe fallbacks
