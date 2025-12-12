@@ -3,7 +3,7 @@
     <manifest filename="/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/manifest.xml"/>
     <pcToLineNum>
         <entry filename="/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3App.mc" id="1" lineNum="5" parent="globals/instinct3attempt3App" pc="268435460" symbol="&lt;init&gt;"/>
-        <entry filename="/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" id="2" lineNum="8" parent="globals/instinct3attempt3View" pc="268435472" symbol="&lt;init&gt;"/>
+        <entry filename="/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" id="2" lineNum="13" parent="globals/instinct3attempt3View" pc="268435472" symbol="&lt;init&gt;"/>
         <entry filename="/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3App.mc" id="3" lineNum="31" parent="globals" pc="268435484" symbol="getApp"/>
         <entry filename="/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3App.mc" id="3" lineNum="32" parent="globals" pc="268435494" symbol="getApp"/>
         <entry filename="/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3Background.mc" id="4" lineNum="6" parent="globals/Background" pc="268435505" symbol="&lt;init&gt;"/>
@@ -16,71 +16,76 @@
         <entry filename="/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3App.mc" id="9" lineNum="7" parent="globals/instinct3attempt3App" pc="268435582" symbol="initialize"/>
         <entry filename="/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3App.mc" id="9" lineNum="8" parent="globals/instinct3attempt3App" pc="268435584" symbol="initialize"/>
         <entry filename="/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3App.mc" id="10" lineNum="16" parent="globals/instinct3attempt3App" pc="268435597" symbol="onStop"/>
-        <entry filename="/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" id="11" lineNum="17" parent="globals/instinct3attempt3View" pc="268435600" symbol="onLayout"/>
-        <entry filename="/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" id="12" lineNum="12" parent="globals/instinct3attempt3View" pc="268435603" symbol="initialize"/>
-        <entry filename="/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" id="12" lineNum="13" parent="globals/instinct3attempt3View" pc="268435605" symbol="initialize"/>
-        <entry filename="/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" id="12" lineNum="14" parent="globals/instinct3attempt3View" pc="268435621" symbol="initialize"/>
-        <entry filename="/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" id="13" lineNum="142" parent="globals/instinct3attempt3View" pc="268435660" symbol="_getSunTimes"/>
-        <entry filename="/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" id="13" lineNum="143" parent="globals/instinct3attempt3View" pc="268435663" symbol="_getSunTimes"/>
-        <entry filename="/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" id="13" lineNum="148" parent="globals/instinct3attempt3View" pc="268435692" symbol="_getSunTimes"/>
-        <entry filename="/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" id="13" lineNum="149" parent="globals/instinct3attempt3View" pc="268435708" symbol="_getSunTimes"/>
-        <entry filename="/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" id="13" lineNum="152" parent="globals/instinct3attempt3View" pc="268435714" symbol="_getSunTimes"/>
-        <entry filename="/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" id="13" lineNum="153" parent="globals/instinct3attempt3View" pc="268435726" symbol="_getSunTimes"/>
-        <entry filename="/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" id="13" lineNum="154" parent="globals/instinct3attempt3View" pc="268435732" symbol="_getSunTimes"/>
-        <entry filename="/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" id="13" lineNum="157" parent="globals/instinct3attempt3View" pc="268435738" symbol="_getSunTimes"/>
-        <entry filename="/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" id="13" lineNum="158" parent="globals/instinct3attempt3View" pc="268435746" symbol="_getSunTimes"/>
-        <entry filename="/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" id="13" lineNum="160" parent="globals/instinct3attempt3View" pc="268435754" symbol="_getSunTimes"/>
-        <entry filename="/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" id="13" lineNum="161" parent="globals/instinct3attempt3View" pc="268435766" symbol="_getSunTimes"/>
-        <entry filename="/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" id="13" lineNum="164" parent="globals/instinct3attempt3View" pc="268435772" symbol="_getSunTimes"/>
-        <entry filename="/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" id="13" lineNum="165" parent="globals/instinct3attempt3View" pc="268435790" symbol="_getSunTimes"/>
-        <entry filename="/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" id="13" lineNum="167" parent="globals/instinct3attempt3View" pc="268435808" symbol="_getSunTimes"/>
-        <entry filename="/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" id="13" lineNum="168" parent="globals/instinct3attempt3View" pc="268435814" symbol="_getSunTimes"/>
-        <entry filename="/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" id="13" lineNum="169" parent="globals/instinct3attempt3View" pc="268435831" symbol="_getSunTimes"/>
-        <entry filename="/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" id="13" lineNum="175" parent="globals/instinct3attempt3View" pc="268435907" symbol="_getSunTimes"/>
-        <entry filename="/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" id="13" lineNum="176" parent="globals/instinct3attempt3View" pc="268435913" symbol="_getSunTimes"/>
-        <entry filename="/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" id="13" lineNum="177" parent="globals/instinct3attempt3View" pc="268435930" symbol="_getSunTimes"/>
-        <entry filename="/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" id="13" lineNum="183" parent="globals/instinct3attempt3View" pc="268436006" symbol="_getSunTimes"/>
-        <entry filename="/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" id="14" lineNum="21" parent="globals/instinct3attempt3View" pc="268436009" symbol="onUpdate"/>
-        <entry filename="/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" id="14" lineNum="23" parent="globals/instinct3attempt3View" pc="268436012" symbol="onUpdate"/>
-        <entry filename="/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" id="14" lineNum="24" parent="globals/instinct3attempt3View" pc="268436028" symbol="onUpdate"/>
-        <entry filename="/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" id="14" lineNum="26" parent="globals/instinct3attempt3View" pc="268436036" symbol="onUpdate"/>
-        <entry filename="/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" id="14" lineNum="27" parent="globals/instinct3attempt3View" pc="268436045" symbol="onUpdate"/>
-        <entry filename="/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" id="14" lineNum="30" parent="globals/instinct3attempt3View" pc="268436054" symbol="onUpdate"/>
-        <entry filename="/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" id="14" lineNum="31" parent="globals/instinct3attempt3View" pc="268436066" symbol="onUpdate"/>
-        <entry filename="/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" id="14" lineNum="43" parent="globals/instinct3attempt3View" pc="268436133" symbol="onUpdate"/>
-        <entry filename="/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" id="14" lineNum="47" parent="globals/instinct3attempt3View" pc="268436154" symbol="onUpdate"/>
-        <entry filename="/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" id="14" lineNum="48" parent="globals/instinct3attempt3View" pc="268436166" symbol="onUpdate"/>
-        <entry filename="/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" id="14" lineNum="51" parent="globals/instinct3attempt3View" pc="268436183" symbol="onUpdate"/>
-        <entry filename="/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" id="14" lineNum="52" parent="globals/instinct3attempt3View" pc="268436190" symbol="onUpdate"/>
-        <entry filename="/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" id="14" lineNum="54" parent="globals/instinct3attempt3View" pc="268436204" symbol="onUpdate"/>
-        <entry filename="/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" id="14" lineNum="55" parent="globals/instinct3attempt3View" pc="268436225" symbol="onUpdate"/>
-        <entry filename="/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" id="14" lineNum="56" parent="globals/instinct3attempt3View" pc="268436246" symbol="onUpdate"/>
-        <entry filename="/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" id="14" lineNum="58" parent="globals/instinct3attempt3View" pc="268436267" symbol="onUpdate"/>
-        <entry filename="/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" id="14" lineNum="65" parent="globals/instinct3attempt3View" pc="268436305" symbol="onUpdate"/>
-        <entry filename="/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" id="14" lineNum="66" parent="globals/instinct3attempt3View" pc="268436317" symbol="onUpdate"/>
-        <entry filename="/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" id="14" lineNum="67" parent="globals/instinct3attempt3View" pc="268436325" symbol="onUpdate"/>
-        <entry filename="/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" id="14" lineNum="70" parent="globals/instinct3attempt3View" pc="268436365" symbol="onUpdate"/>
-        <entry filename="/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" id="14" lineNum="71" parent="globals/instinct3attempt3View" pc="268436373" symbol="onUpdate"/>
-        <entry filename="/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" id="14" lineNum="78" parent="globals/instinct3attempt3View" pc="268436418" symbol="onUpdate"/>
-        <entry filename="/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" id="14" lineNum="79" parent="globals/instinct3attempt3View" pc="268436422" symbol="onUpdate"/>
-        <entry filename="/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" id="14" lineNum="80" parent="globals/instinct3attempt3View" pc="268436426" symbol="onUpdate"/>
-        <entry filename="/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" id="14" lineNum="81" parent="globals/instinct3attempt3View" pc="268436433" symbol="onUpdate"/>
-        <entry filename="/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" id="14" lineNum="84" parent="globals/instinct3attempt3View" pc="268436440" symbol="onUpdate"/>
-        <entry filename="/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" id="14" lineNum="104" parent="globals/instinct3attempt3View" pc="268436460" symbol="onUpdate"/>
-        <entry filename="/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" id="14" lineNum="113" parent="globals/instinct3attempt3View" pc="268436486" symbol="onUpdate"/>
-        <entry filename="/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" id="14" lineNum="114" parent="globals/instinct3attempt3View" pc="268436496" symbol="onUpdate"/>
-        <entry filename="/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" id="14" lineNum="123" parent="globals/instinct3attempt3View" pc="268436519" symbol="onUpdate"/>
-        <entry filename="/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" id="14" lineNum="132" parent="globals/instinct3attempt3View" pc="268436548" symbol="onUpdate"/>
-        <entry filename="/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3Background.mc" id="15" lineNum="8" parent="globals/Background" pc="268436575" symbol="initialize"/>
-        <entry filename="/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3Background.mc" id="15" lineNum="9" parent="globals/Background" pc="268436578" symbol="initialize"/>
-        <entry filename="/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3Background.mc" id="15" lineNum="13" parent="globals/Background" pc="268436596" symbol="initialize"/>
-        <entry filename="/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3Background.mc" id="16" lineNum="16" parent="globals/Background" pc="268436613" symbol="draw"/>
-        <entry filename="/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3Background.mc" id="16" lineNum="18" parent="globals/Background" pc="268436615" symbol="draw"/>
-        <entry filename="/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3Background.mc" id="16" lineNum="19" parent="globals/Background" pc="268436646" symbol="draw"/>
-        <entry filename="/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/bin/gen/006-B4585-00/source/Rez.mcgen" id="17" lineNum="17" parent="globals/Rez/Layouts" pc="268436655" symbol="WatchFace"/>
-        <entry filename="/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/bin/gen/006-B4585-00/source/Rez.mcgen" id="17" lineNum="18" parent="globals/Rez/Layouts" pc="268436666" symbol="WatchFace"/>
-        <entry filename="/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/bin/gen/006-B4585-00/source/Rez.mcgen" id="17" lineNum="20" parent="globals/Rez/Layouts" pc="268436690" symbol="WatchFace"/>
-        <entry filename="/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/bin/gen/006-B4585-00/source/Rez.mcgen" id="17" lineNum="22" parent="globals/Rez/Layouts" pc="268436806" symbol="WatchFace"/>
+        <entry filename="/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" id="11" lineNum="22" parent="globals/instinct3attempt3View" pc="268435600" symbol="onLayout"/>
+        <entry filename="/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" id="12" lineNum="17" parent="globals/instinct3attempt3View" pc="268435603" symbol="initialize"/>
+        <entry filename="/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" id="12" lineNum="18" parent="globals/instinct3attempt3View" pc="268435605" symbol="initialize"/>
+        <entry filename="/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" id="12" lineNum="19" parent="globals/instinct3attempt3View" pc="268435621" symbol="initialize"/>
+        <entry filename="/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" id="13" lineNum="171" parent="globals/instinct3attempt3View" pc="268435660" symbol="_getSunTimes"/>
+        <entry filename="/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" id="13" lineNum="172" parent="globals/instinct3attempt3View" pc="268435663" symbol="_getSunTimes"/>
+        <entry filename="/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" id="13" lineNum="177" parent="globals/instinct3attempt3View" pc="268435692" symbol="_getSunTimes"/>
+        <entry filename="/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" id="13" lineNum="178" parent="globals/instinct3attempt3View" pc="268435708" symbol="_getSunTimes"/>
+        <entry filename="/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" id="13" lineNum="181" parent="globals/instinct3attempt3View" pc="268435714" symbol="_getSunTimes"/>
+        <entry filename="/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" id="13" lineNum="182" parent="globals/instinct3attempt3View" pc="268435726" symbol="_getSunTimes"/>
+        <entry filename="/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" id="13" lineNum="183" parent="globals/instinct3attempt3View" pc="268435732" symbol="_getSunTimes"/>
+        <entry filename="/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" id="13" lineNum="186" parent="globals/instinct3attempt3View" pc="268435738" symbol="_getSunTimes"/>
+        <entry filename="/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" id="13" lineNum="187" parent="globals/instinct3attempt3View" pc="268435746" symbol="_getSunTimes"/>
+        <entry filename="/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" id="13" lineNum="189" parent="globals/instinct3attempt3View" pc="268435754" symbol="_getSunTimes"/>
+        <entry filename="/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" id="13" lineNum="190" parent="globals/instinct3attempt3View" pc="268435766" symbol="_getSunTimes"/>
+        <entry filename="/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" id="13" lineNum="193" parent="globals/instinct3attempt3View" pc="268435772" symbol="_getSunTimes"/>
+        <entry filename="/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" id="13" lineNum="194" parent="globals/instinct3attempt3View" pc="268435790" symbol="_getSunTimes"/>
+        <entry filename="/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" id="13" lineNum="196" parent="globals/instinct3attempt3View" pc="268435808" symbol="_getSunTimes"/>
+        <entry filename="/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" id="13" lineNum="197" parent="globals/instinct3attempt3View" pc="268435814" symbol="_getSunTimes"/>
+        <entry filename="/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" id="13" lineNum="198" parent="globals/instinct3attempt3View" pc="268435831" symbol="_getSunTimes"/>
+        <entry filename="/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" id="13" lineNum="204" parent="globals/instinct3attempt3View" pc="268435907" symbol="_getSunTimes"/>
+        <entry filename="/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" id="13" lineNum="205" parent="globals/instinct3attempt3View" pc="268435913" symbol="_getSunTimes"/>
+        <entry filename="/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" id="13" lineNum="206" parent="globals/instinct3attempt3View" pc="268435930" symbol="_getSunTimes"/>
+        <entry filename="/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" id="13" lineNum="212" parent="globals/instinct3attempt3View" pc="268436006" symbol="_getSunTimes"/>
+        <entry filename="/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" id="14" lineNum="26" parent="globals/instinct3attempt3View" pc="268436009" symbol="onUpdate"/>
+        <entry filename="/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" id="14" lineNum="28" parent="globals/instinct3attempt3View" pc="268436012" symbol="onUpdate"/>
+        <entry filename="/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" id="14" lineNum="29" parent="globals/instinct3attempt3View" pc="268436028" symbol="onUpdate"/>
+        <entry filename="/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" id="14" lineNum="31" parent="globals/instinct3attempt3View" pc="268436036" symbol="onUpdate"/>
+        <entry filename="/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" id="14" lineNum="32" parent="globals/instinct3attempt3View" pc="268436045" symbol="onUpdate"/>
+        <entry filename="/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" id="14" lineNum="44" parent="globals/instinct3attempt3View" pc="268436054" symbol="onUpdate"/>
+        <entry filename="/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" id="14" lineNum="51" parent="globals/instinct3attempt3View" pc="268436066" symbol="onUpdate"/>
+        <entry filename="/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" id="14" lineNum="52" parent="globals/instinct3attempt3View" pc="268436070" symbol="onUpdate"/>
+        <entry filename="/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" id="14" lineNum="53" parent="globals/instinct3attempt3View" pc="268436078" symbol="onUpdate"/>
+        <entry filename="/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" id="14" lineNum="55" parent="globals/instinct3attempt3View" pc="268436089" symbol="onUpdate"/>
+        <entry filename="/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" id="14" lineNum="56" parent="globals/instinct3attempt3View" pc="268436097" symbol="onUpdate"/>
+        <entry filename="/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" id="14" lineNum="59" parent="globals/instinct3attempt3View" pc="268436105" symbol="onUpdate"/>
+        <entry filename="/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" id="14" lineNum="72" parent="globals/instinct3attempt3View" pc="268436162" symbol="onUpdate"/>
+        <entry filename="/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" id="14" lineNum="76" parent="globals/instinct3attempt3View" pc="268436183" symbol="onUpdate"/>
+        <entry filename="/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" id="14" lineNum="77" parent="globals/instinct3attempt3View" pc="268436195" symbol="onUpdate"/>
+        <entry filename="/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" id="14" lineNum="80" parent="globals/instinct3attempt3View" pc="268436212" symbol="onUpdate"/>
+        <entry filename="/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" id="14" lineNum="81" parent="globals/instinct3attempt3View" pc="268436219" symbol="onUpdate"/>
+        <entry filename="/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" id="14" lineNum="83" parent="globals/instinct3attempt3View" pc="268436233" symbol="onUpdate"/>
+        <entry filename="/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" id="14" lineNum="84" parent="globals/instinct3attempt3View" pc="268436254" symbol="onUpdate"/>
+        <entry filename="/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" id="14" lineNum="85" parent="globals/instinct3attempt3View" pc="268436275" symbol="onUpdate"/>
+        <entry filename="/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" id="14" lineNum="87" parent="globals/instinct3attempt3View" pc="268436296" symbol="onUpdate"/>
+        <entry filename="/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" id="14" lineNum="94" parent="globals/instinct3attempt3View" pc="268436334" symbol="onUpdate"/>
+        <entry filename="/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" id="14" lineNum="95" parent="globals/instinct3attempt3View" pc="268436346" symbol="onUpdate"/>
+        <entry filename="/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" id="14" lineNum="96" parent="globals/instinct3attempt3View" pc="268436354" symbol="onUpdate"/>
+        <entry filename="/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" id="14" lineNum="99" parent="globals/instinct3attempt3View" pc="268436394" symbol="onUpdate"/>
+        <entry filename="/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" id="14" lineNum="100" parent="globals/instinct3attempt3View" pc="268436402" symbol="onUpdate"/>
+        <entry filename="/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" id="14" lineNum="107" parent="globals/instinct3attempt3View" pc="268436447" symbol="onUpdate"/>
+        <entry filename="/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" id="14" lineNum="108" parent="globals/instinct3attempt3View" pc="268436451" symbol="onUpdate"/>
+        <entry filename="/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" id="14" lineNum="109" parent="globals/instinct3attempt3View" pc="268436455" symbol="onUpdate"/>
+        <entry filename="/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" id="14" lineNum="110" parent="globals/instinct3attempt3View" pc="268436462" symbol="onUpdate"/>
+        <entry filename="/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" id="14" lineNum="113" parent="globals/instinct3attempt3View" pc="268436469" symbol="onUpdate"/>
+        <entry filename="/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" id="14" lineNum="133" parent="globals/instinct3attempt3View" pc="268436489" symbol="onUpdate"/>
+        <entry filename="/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" id="14" lineNum="142" parent="globals/instinct3attempt3View" pc="268436515" symbol="onUpdate"/>
+        <entry filename="/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" id="14" lineNum="143" parent="globals/instinct3attempt3View" pc="268436525" symbol="onUpdate"/>
+        <entry filename="/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" id="14" lineNum="152" parent="globals/instinct3attempt3View" pc="268436548" symbol="onUpdate"/>
+        <entry filename="/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3View.mc" id="14" lineNum="161" parent="globals/instinct3attempt3View" pc="268436577" symbol="onUpdate"/>
+        <entry filename="/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3Background.mc" id="15" lineNum="8" parent="globals/Background" pc="268436604" symbol="initialize"/>
+        <entry filename="/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3Background.mc" id="15" lineNum="9" parent="globals/Background" pc="268436607" symbol="initialize"/>
+        <entry filename="/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3Background.mc" id="15" lineNum="13" parent="globals/Background" pc="268436625" symbol="initialize"/>
+        <entry filename="/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3Background.mc" id="16" lineNum="16" parent="globals/Background" pc="268436642" symbol="draw"/>
+        <entry filename="/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3Background.mc" id="16" lineNum="18" parent="globals/Background" pc="268436644" symbol="draw"/>
+        <entry filename="/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/source/instinct3attempt3Background.mc" id="16" lineNum="19" parent="globals/Background" pc="268436675" symbol="draw"/>
+        <entry filename="/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/bin/gen/006-B4585-00/source/Rez.mcgen" id="17" lineNum="17" parent="globals/Rez/Layouts" pc="268436684" symbol="WatchFace"/>
+        <entry filename="/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/bin/gen/006-B4585-00/source/Rez.mcgen" id="17" lineNum="18" parent="globals/Rez/Layouts" pc="268436695" symbol="WatchFace"/>
+        <entry filename="/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/bin/gen/006-B4585-00/source/Rez.mcgen" id="17" lineNum="20" parent="globals/Rez/Layouts" pc="268436719" symbol="WatchFace"/>
+        <entry filename="/Users/guyfriedman/Documents/GuysUtil/MonkeyC/instinct3attempt3/bin/gen/006-B4585-00/source/Rez.mcgen" id="17" lineNum="22" parent="globals/Rez/Layouts" pc="268436835" symbol="WatchFace"/>
     </pcToLineNum>
     <symbolTable>
         <entry id="8388639" module="true" symbol="Graphics"/>
@@ -149,35 +154,37 @@
         <entry endPc="268436008" name="ss" stackId="6" startPc="268435663"/>
         <entry endPc="268435903" name="gsr" stackId="7" startPc="268435814"/>
         <entry endPc="268436002" name="gss" stackId="8" startPc="268435913"/>
-        <entry arg="true" endPc="268436574" name="dc" stackId="1" startPc="268436009"/>
-        <entry endPc="268436573" name="w" stackId="2" startPc="268436012"/>
-        <entry endPc="268436573" name="h" stackId="3" startPc="268436012"/>
-        <entry endPc="268436573" name="clk" stackId="4" startPc="268436012"/>
-        <entry endPc="268436573" name="timeStr" stackId="5" startPc="268436012"/>
-        <entry endPc="268436573" name="timeFont" stackId="6" startPc="268436012"/>
-        <entry endPc="268436573" name="now" stackId="7" startPc="268436012"/>
-        <entry endPc="268436573" name="info" stackId="8" startPc="268436012"/>
-        <entry endPc="268436573" name="dowNames" stackId="9" startPc="268436012"/>
-        <entry endPc="268436573" name="dow" stackId="10" startPc="268436012"/>
-        <entry endPc="268436573" name="dayStr" stackId="11" startPc="268436012"/>
-        <entry endPc="268436573" name="monthStr" stackId="12" startPc="268436012"/>
-        <entry endPc="268436573" name="yearStr" stackId="13" startPc="268436012"/>
-        <entry endPc="268436573" name="dateStr" stackId="14" startPc="268436012"/>
-        <entry endPc="268436573" name="stats" stackId="15" startPc="268436012"/>
-        <entry endPc="268436573" name="battPct" stackId="16" startPc="268436012"/>
-        <entry endPc="268436573" name="battPctStr" stackId="17" startPc="268436012"/>
-        <entry endPc="268436573" name="sun" stackId="18" startPc="268436012"/>
-        <entry endPc="268436573" name="sunLine" stackId="19" startPc="268436012"/>
-        <entry endPc="268436573" name="yTopRow" stackId="20" startPc="268436012"/>
-        <entry endPc="268436573" name="yDateRow" stackId="21" startPc="268436012"/>
-        <entry endPc="268436573" name="yTime" stackId="22" startPc="268436012"/>
-        <entry endPc="268436573" name="ySunRow" stackId="23" startPc="268436012"/>
-        <entry endPc="268436573" name="dateX" stackId="24" startPc="268436012"/>
-        <entry endPc="268436611" name="dictionary" stackId="1" startPc="268436578"/>
-        <entry arg="true" endPc="268436654" name="dc" stackId="1" startPc="268436613"/>
-        <entry arg="true" endPc="268436820" name="dc" stackId="1" startPc="268436655"/>
-        <entry endPc="268436820" name="rez_cmp_local_custom_drawable_11939594661139614796" stackId="2" startPc="268436666"/>
-        <entry endPc="268436820" name="rez_cmp_local_text_TimeLabel" stackId="3" startPc="268436666"/>
+        <entry arg="true" endPc="268436603" name="dc" stackId="1" startPc="268436009"/>
+        <entry endPc="268436602" name="w" stackId="2" startPc="268436012"/>
+        <entry endPc="268436602" name="h" stackId="3" startPc="268436012"/>
+        <entry endPc="268436602" name="clk" stackId="4" startPc="268436012"/>
+        <entry endPc="268436602" name="hh" stackId="5" startPc="268436012"/>
+        <entry endPc="268436602" name="mm" stackId="6" startPc="268436012"/>
+        <entry endPc="268436602" name="timeStr" stackId="7" startPc="268436012"/>
+        <entry endPc="268436602" name="timeFont" stackId="8" startPc="268436012"/>
+        <entry endPc="268436602" name="now" stackId="9" startPc="268436012"/>
+        <entry endPc="268436602" name="info" stackId="10" startPc="268436012"/>
+        <entry endPc="268436602" name="dowNames" stackId="11" startPc="268436012"/>
+        <entry endPc="268436602" name="dow" stackId="12" startPc="268436012"/>
+        <entry endPc="268436602" name="dayStr" stackId="13" startPc="268436012"/>
+        <entry endPc="268436602" name="monthStr" stackId="14" startPc="268436012"/>
+        <entry endPc="268436602" name="yearStr" stackId="15" startPc="268436012"/>
+        <entry endPc="268436602" name="dateStr" stackId="16" startPc="268436012"/>
+        <entry endPc="268436602" name="stats" stackId="17" startPc="268436012"/>
+        <entry endPc="268436602" name="battPct" stackId="18" startPc="268436012"/>
+        <entry endPc="268436602" name="battPctStr" stackId="19" startPc="268436012"/>
+        <entry endPc="268436602" name="sun" stackId="20" startPc="268436012"/>
+        <entry endPc="268436602" name="sunLine" stackId="21" startPc="268436012"/>
+        <entry endPc="268436602" name="yTopRow" stackId="22" startPc="268436012"/>
+        <entry endPc="268436602" name="yDateRow" stackId="23" startPc="268436012"/>
+        <entry endPc="268436602" name="yTime" stackId="24" startPc="268436012"/>
+        <entry endPc="268436602" name="ySunRow" stackId="25" startPc="268436012"/>
+        <entry endPc="268436602" name="dateX" stackId="26" startPc="268436012"/>
+        <entry endPc="268436640" name="dictionary" stackId="1" startPc="268436607"/>
+        <entry arg="true" endPc="268436683" name="dc" stackId="1" startPc="268436642"/>
+        <entry arg="true" endPc="268436849" name="dc" stackId="1" startPc="268436684"/>
+        <entry endPc="268436849" name="rez_cmp_local_custom_drawable_11939594661139614796" stackId="2" startPc="268436695"/>
+        <entry endPc="268436849" name="rez_cmp_local_text_TimeLabel" stackId="3" startPc="268436695"/>
     </localVars>
     <deviceInfo deviceVersion="8fc30743a4191ec19bcafa28e3ffcc2b5a958a17" partNumber="006-B4585-00"/>
     <annotations>
@@ -248,14 +255,14 @@
         <functionEntry accessMode="public" endPc="268436008" name="_getSunTimes" parent="instinct3attempt3View" startPc="268435660">
             <documentation/>
         </functionEntry>
-        <functionEntry accessMode="public" endPc="268436574" name="onUpdate" parent="instinct3attempt3View" startPc="268436009">
+        <functionEntry accessMode="public" endPc="268436603" name="onUpdate" parent="instinct3attempt3View" startPc="268436009">
             <param id="dc"/>
             <documentation/>
         </functionEntry>
-        <functionEntry accessMode="public" endPc="268436612" name="initialize" parent="Background" startPc="268436575">
+        <functionEntry accessMode="public" endPc="268436641" name="initialize" parent="Background" startPc="268436604">
             <documentation/>
         </functionEntry>
-        <functionEntry accessMode="public" endPc="268436654" name="draw" parent="Background" startPc="268436613">
+        <functionEntry accessMode="public" endPc="268436683" name="draw" parent="Background" startPc="268436642">
             <param id="dc"/>
             <documentation/>
         </functionEntry>
@@ -271,7 +278,7 @@
         <functionEntry accessMode="public" name="&lt;init&gt;" parent="Strings">
             <documentation/>
         </functionEntry>
-        <functionEntry accessMode="public" endPc="268436820" name="WatchFace" parent="Layouts" startPc="268436655">
+        <functionEntry accessMode="public" endPc="268436849" name="WatchFace" parent="Layouts" startPc="268436684">
             <param id="dc"/>
             <documentation/>
         </functionEntry>
