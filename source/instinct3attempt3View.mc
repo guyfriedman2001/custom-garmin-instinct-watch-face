@@ -13,23 +13,88 @@ const UPDATE_CYCLE_MINUTES = 10; // <- only update big screen once every UPDATE_
 const USING_45_MM_MODEL = true; // <- true: render for 45 mm model, false: render for 50 mm model.
 const SHOW_BATTERY_PCT_IMMEDIATELY_UPON_RETURN_TO_SCREEN = true; // <- other option is to have sub screen show the same minute as big screen
 const SUN_RETRY_SECONDS = 300;     // retry every 5 minutes until success
+const SUN_EMOJI = " ☀️ "; // <- remove wihtespace if necessary
+const EXP_SUN_EMOJI = "🧊🤘🔥"; // <- will only render on debug builds
 
+/* // uncoment when i decide to also support 50 mm instinct models, save Imem and caching for now
 // dimension coordinates of the 'submarine screen' of the solar 45 mm model.
 const _SUB_X_45 = 115;
 const _SUB_Y_45 = 5;
 const _SUB_W_45 = 55;
 const _SUB_H_45 = 55;
+
 // dimension coordinates of the 'submarine screen' of the solar 50 mm model.
 const _SUB_X_50 = 32; //FIXME: GET CORRECT COORDINATES
 const _SUB_Y_50 = 70; //FIXME: GET CORRECT COORDINATES
 const _SUB_W_50 = 112; //FIXME: GET CORRECT COORDINATES
 const _SUB_H_50 = 80; //FIXME: GET CORRECT COORDINATES
+*/
 
-
+/* // uncoment when i decide to also support 50 mm instinct models
 var _SUB_X;
 var _SUB_Y;
 var _SUB_W;
 var _SUB_H;
+
+// _m
+var __M_X;
+var __M_Y;
+var __M_W;
+var __M_H;
+
+// m_
+var _M__X;
+var _M__Y;
+var _M__W;
+var _M__H;
+
+// _h
+var __H_X;
+var __H_Y;
+var __H_W;
+var __H_H;
+
+// h_
+var _H__X;
+var _H__Y;
+var _H__W;
+var _H__H;
+*/
+
+// V comment V when V I V decide V to V also V support V 50mm V models V
+const _SUB_X = 115;
+const _SUB_Y = 5;
+const _SUB_W = 55;
+const _SUB_H = 55;
+
+// _m
+const __M_X = 0; //FIXME: GET CORRECT COORDINATES
+const __M_Y = 0; //FIXME: GET CORRECT COORDINATES
+const __M_W = 0; //FIXME: GET CORRECT COORDINATES
+const __M_H = 0; //FIXME: GET CORRECT COORDINATES
+
+// m_
+const _M__X = 0; //FIXME: GET CORRECT COORDINATES
+const _M__Y = 0; //FIXME: GET CORRECT COORDINATES
+const _M__W = 0; //FIXME: GET CORRECT COORDINATES
+const _M__H = 0; //FIXME: GET CORRECT COORDINATES
+
+// _h
+const __H_X = 0; //FIXME: GET CORRECT COORDINATES
+const __H_Y = 0; //FIXME: GET CORRECT COORDINATES
+const __H_W = 0; //FIXME: GET CORRECT COORDINATES
+const __H_H = 0; //FIXME: GET CORRECT COORDINATES
+
+// h_
+const _H__X = 0; //FIXME: GET CORRECT COORDINATES
+const _H__Y = 0; //FIXME: GET CORRECT COORDINATES
+const _H__W = 0; //FIXME: GET CORRECT COORDINATES
+const _H__H = 0; //FIXME: GET CORRECT COORDINATES
+// ^ comment ^ when ^ I ^ decide ^ to ^ also ^ support ^ 50mm ^ models ^
+
+
+//TODO: create seperate updating windows for _m m_ _h h_, to keep screen updates to a minimum!
+//TODO: after above rows completion, add onPartialUpdate() call to _force_redraw_entire_screen()
 
 
 
@@ -39,6 +104,7 @@ const DEBUG_SHOW_SECONDS_IN_HH_MM = true; // DEBUG: show seconds in both HH and 
 const DEBUG_INVERT_SUB_COLOR = false;
 const DEBUG_INVERT_MAIN_COLOR = true;
 const DEBUG_SUN_TIMES = true;  // <- update sun cache every second
+const DEBUG_SUN_EMOJI = true; // <- use EXP_SUN_EMOJI
 
 // Helper: only true if global DEBUG_MODE is on *and* the specific flag is true
 function debug(flag) {
@@ -82,6 +148,7 @@ class instinct3attempt3View extends WatchUi.WatchFace {
         WatchUi.WatchFace.initialize();
         _bigTimeFont = WatchUi.loadResource(Rez.Fonts.BigTime);
         _bigTimeHalfFont = WatchUi.loadResource(Rez.Fonts.BigTimeHalf);
+        /* // uncoment when i decide to also support 50 mm instinct models, save Imem and caching for now
         if (USING_45_MM_MODEL){
             _SUB_X = _SUB_X_45;
             _SUB_Y = _SUB_Y_45;
@@ -93,6 +160,7 @@ class instinct3attempt3View extends WatchUi.WatchFace {
             _SUB_W = _SUB_W_50;
             _SUB_H = _SUB_H_50;
         }
+        */
 
         _forceSunUpdate   = true;
         _sunLastAttempt = 0;
@@ -210,10 +278,14 @@ class instinct3attempt3View extends WatchUi.WatchFace {
         _updateSunCacheIfNeeded();
         // Sunset intentionally on LEFT, sunrise intentionally on RIGHT
         // Avoid emoji if your device font renders it inconsistently.
-        var sunLine = Lang.format("$1$ ☀️ $2$", [
+        var used_sun_emoji = SUN_EMOJI;
+        if(debug(DEBUG_SUN_EMOJI)){used_sun_emoji = EXP_SUN_EMOJI;}
+        //const  = true; // <- use 
+        var sunLine = Lang.format("$1$$2$$3$", [
             _sunsetStrCached,
+            used_sun_emoji,
             _sunriseStrCached
-        ]); // <- TODO: remove wihtespace if necessary
+        ]);
 
         // ---------- Layout coordinates ----------
 
